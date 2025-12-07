@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "services": "Services",
+    "timeline": "Parcours",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "name": "Mohamed Ghilly",
+    "title": "Développeur Web & Ingénieur Réseaux",
+    "subtitle": "Passionné par la création de solutions performantes, sécurisées et bien conçues.",
+    "cta_projects": "Voir mes projets",
+    "cta_cv": "Télécharger mon CV"
+  },
+  "about": {
+    "title": "À propos",
+    "subtitle": "Découvrez mon parcours",
+    "content": "Étudiant en informatique de gestion à l'ISCAE, je combine ma passion pour le développement web et l'ingénierie réseaux. Mon parcours m'a permis d'acquérir une solide expertise en conception de solutions web modernes ainsi qu'en administration et sécurisation d'infrastructures réseau. Je suis constamment à la recherche de nouveaux défis techniques et d'opportunités pour créer des solutions innovantes qui allient performance et élégance."
+  },
+  "skills": {
+    "title": "Compétences",
+    "subtitle": "Technologies et outils que je maîtrise",
+    "categories": {
+      "web": "Développement Web",
+      "network": "Réseaux & Sécurité",
+      "devops": "DevOps & Outils"
+    }
+  },
+  "projects": {
+    "title": "Projets",
+    "subtitle": "Quelques réalisations récentes",
+    "view_code": "Voir le code",
+    "view_demo": "Démo",
+    "items": [
+      {
+        "name": "Plateforme E-Commerce",
+        "type": "Projet Personnel",
+        "description": "Application web complète avec panier, paiement et gestion des commandes. Interface responsive et expérience utilisateur optimisée.",
+        "tech": ["React", "Node.js", "MongoDB", "Stripe"],
+        "highlights": ["Architecture microservices", "Authentification JWT", "Paiement sécurisé"]
+      },
+      {
+        "name": "Infrastructure Réseau Entreprise",
+        "type": "Stage - Chinguitel",
+        "description": "Conception et déploiement d'une architecture réseau complète incluant VLAN, routage OSPF et sécurité périmétrique.",
+        "tech": ["Cisco", "Fortinet", "OSPF", "VLAN"],
+        "highlights": ["Haute disponibilité", "Segmentation sécurisée", "Monitoring centralisé"]
+      },
+      {
+        "name": "Automatisation Réseau",
+        "type": "Projet Académique",
+        "description": "Scripts Python pour l'automatisation de la configuration et du monitoring d'équipements réseau Cisco.",
+        "tech": ["Python", "Netmiko", "Ansible", "Jinja2"],
+        "highlights": ["Déploiement automatisé", "Rapports temps réel", "Gestion des erreurs"]
+      }
+    ]
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Ce que je peux vous apporter",
+    "items": [
+      {
+        "title": "Développement Web",
+        "description": "Création de sites et applications web modernes, responsive et performants avec les dernières technologies."
+      },
+      {
+        "title": "Architecture Réseaux",
+        "description": "Conception et déploiement d'infrastructures réseau sécurisées, évolutives et haute disponibilité."
+      },
+      {
+        "title": "Automatisation",
+        "description": "Scripts et outils pour automatiser vos tâches répétitives et optimiser vos processus."
+      },
+      {
+        "title": "Conseil & Formation",
+        "description": "Accompagnement technique et formations sur mesure pour vos équipes."
+      }
+    ]
+  },
+  "timeline": {
+    "title": "Parcours",
+    "subtitle": "Mon évolution professionnelle et académique",
+    "items": [
+      {
+        "year": "2024",
+        "title": "Stage - Ministère des Finances",
+        "location": "Nouakchott, Mauritanie",
+        "description": "Administration système et réseau, support technique et gestion des infrastructures IT."
+      },
+      {
+        "year": "2023",
+        "title": "Stage - Chinguitel",
+        "location": "Nouakchott, Mauritanie",
+        "description": "Conception et déploiement d'architecture réseau, configuration d'équipements Cisco et Fortinet."
+      },
+      {
+        "year": "2022",
+        "title": "Licence Informatique de Gestion",
+        "location": "ISCAE, Nouakchott",
+        "description": "Formation complète en développement, bases de données, réseaux et gestion de projets IT."
+      },
+      {
+        "year": "2021",
+        "title": "Baccalauréat Scientifique",
+        "location": "Nouakchott, Mauritanie",
+        "description": "Obtention du baccalauréat avec mention, spécialité mathématiques et sciences."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Travaillons ensemble",
+    "intro": "Vous avez un projet, une opportunité ou une question ? N'hésitez pas à me contacter.",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "message": "Message",
+      "send": "Envoyer",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé avec succès !",
+      "error": "Une erreur s'est produite. Veuillez réessayer."
+    }
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "quick_links": "Liens rapides"
+  }
+}
