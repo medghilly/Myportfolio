@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "services": "Services",
+    "timeline": "Timeline",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Mohamed Ghilly",
+    "title": "Web Developer & Network Engineer",
+    "subtitle": "Passionate about building fast, secure and well-designed solutions.",
+    "cta_projects": "View my projects",
+    "cta_cv": "Download my CV"
+  },
+  "about": {
+    "title": "About",
+    "subtitle": "Get to know me",
+    "content": "As a Management Information Systems student at ISCAE, I combine my passion for web development and network engineering. My journey has equipped me with solid expertise in modern web solution design as well as network infrastructure administration and security. I'm constantly seeking new technical challenges and opportunities to create innovative solutions that blend performance and elegance."
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies and tools I master",
+    "categories": {
+      "web": "Web Development",
+      "network": "Networking & Security",
+      "devops": "DevOps & Tools"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Some recent work",
+    "view_code": "View code",
+    "view_demo": "Demo",
+    "items": [
+      {
+        "name": "E-Commerce Platform",
+        "type": "Personal Project",
+        "description": "Complete web application with cart, payment and order management. Responsive interface and optimized user experience.",
+        "tech": ["React", "Node.js", "MongoDB", "Stripe"],
+        "highlights": ["Microservices architecture", "JWT Authentication", "Secure payments"]
+      },
+      {
+        "name": "Enterprise Network Infrastructure",
+        "type": "Internship - Chinguitel",
+        "description": "Design and deployment of a complete network architecture including VLAN, OSPF routing and perimeter security.",
+        "tech": ["Cisco", "Fortinet", "OSPF", "VLAN"],
+        "highlights": ["High availability", "Secure segmentation", "Centralized monitoring"]
+      },
+      {
+        "name": "Network Automation",
+        "type": "Academic Project",
+        "description": "Python scripts for automating configuration and monitoring of Cisco network equipment.",
+        "tech": ["Python", "Netmiko", "Ansible", "Jinja2"],
+        "highlights": ["Automated deployment", "Real-time reports", "Error handling"]
+      }
+    ]
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "What I can offer",
+    "items": [
+      {
+        "title": "Web Development",
+        "description": "Creation of modern, responsive and high-performance websites and web applications using the latest technologies."
+      },
+      {
+        "title": "Network Architecture",
+        "description": "Design and deployment of secure, scalable and highly available network infrastructures."
+      },
+      {
+        "title": "Automation",
+        "description": "Scripts and tools to automate your repetitive tasks and optimize your processes."
+      },
+      {
+        "title": "Consulting & Training",
+        "description": "Technical support and customized training for your teams."
+      }
+    ]
+  },
+  "timeline": {
+    "title": "Timeline",
+    "subtitle": "My professional and academic journey",
+    "items": [
+      {
+        "year": "2024",
+        "title": "Internship - Ministry of Finance",
+        "location": "Nouakchott, Mauritania",
+        "description": "System and network administration, technical support and IT infrastructure management."
+      },
+      {
+        "year": "2023",
+        "title": "Internship - Chinguitel",
+        "location": "Nouakchott, Mauritania",
+        "description": "Network architecture design and deployment, Cisco and Fortinet equipment configuration."
+      },
+      {
+        "year": "2022",
+        "title": "Bachelor's in Management Information Systems",
+        "location": "ISCAE, Nouakchott",
+        "description": "Comprehensive training in development, databases, networking and IT project management."
+      },
+      {
+        "year": "2021",
+        "title": "Scientific Baccalaureate",
+        "location": "Nouakchott, Mauritania",
+        "description": "Obtained baccalaureate with honors, specializing in mathematics and sciences."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's work together",
+    "intro": "Do you have a project, an opportunity or a question? Feel free to reach out.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "An error occurred. Please try again."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "quick_links": "Quick Links"
+  }
+}
