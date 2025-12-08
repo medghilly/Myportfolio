@@ -7,9 +7,18 @@ const EMAILJS_CONFIG = {
   publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '',
 };
 
+// Debug: Log configuration status (remove in production)
+console.log('EmailJS Config:', {
+  hasServiceId: !!EMAILJS_CONFIG.serviceId,
+  hasTemplateId: !!EMAILJS_CONFIG.templateId,
+  hasPublicKey: !!EMAILJS_CONFIG.publicKey,
+});
+
 // Initialize EmailJS with public key
 if (EMAILJS_CONFIG.publicKey) {
   emailjs.init(EMAILJS_CONFIG.publicKey);
+} else {
+  console.error('EmailJS public key is missing!');
 }
 
 export interface EmailFormData {
