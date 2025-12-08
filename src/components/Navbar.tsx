@@ -44,15 +44,16 @@ const Navbar = () => {
       <nav className="section-container py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a 
-            href="#home" 
-            className="text-xl font-bold text-foreground hover:text-primary transition-colors"
+          <a
+            href="#home"
+            className="text-xl font-bold hover:text-primary transition-colors flex items-center gap-1"
             onClick={(e) => {
               e.preventDefault();
               handleNavClick('#home');
             }}
           >
-            M. Ghilly
+            <span className="text-foreground">Mohamed</span>
+            <span className="gradient-text">Ghilly</span>
           </a>
 
           {/* Desktop Navigation */}

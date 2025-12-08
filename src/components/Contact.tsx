@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Github, Linkedin, Mail, MessageCircle, Send } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import { sendContactEmail } from '@/lib/emailService';
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -22,17 +23,30 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: t.contact.form.success,
-      description: formData.email
-    });
-    
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
+
+    try {
+      // Send email using EmailJS
+      await sendContactEmail(formData);
+
+      // Show success toast
+      toast({
+        title: t.contact.form.success,
+        description: formData.email
+      });
+
+      // Clear form on success
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      // Show error toast
+      toast({
+        title: t.contact.form.error,
+        description: error instanceof Error ? error.message : 'Une erreur inattendue s\'est produite.',
+        variant: 'destructive'
+      });
+      console.error('Email send error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const socialLinks = [

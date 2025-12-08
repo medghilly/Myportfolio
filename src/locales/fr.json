@@ -19,7 +19,7 @@
   "about": {
     "title": "À propos",
     "subtitle": "Découvrez mon parcours",
-    "content": "Étudiant en informatique de gestion à l'ISCAE, je combine ma passion pour le développement web et l'ingénierie réseaux. Mon parcours m'a permis d'acquérir une solide expertise en conception de solutions web modernes ainsi qu'en administration et sécurisation d'infrastructures réseau. Je suis constamment à la recherche de nouveaux défis techniques et d'opportunités pour créer des solutions innovantes qui allient performance et élégance."
+    "content": "Étudiant spécialisé en réseaux informatiques et télécommunications, je suis également Full Stack Developer. Ma formation me permet de maîtriser à la fois la conception et la sécurisation d'infrastructures réseau complexes, ainsi que le développement d'applications web modernes et performantes. Je combine ces deux expertises pour créer des solutions complètes, alliant robustesse réseau et excellence en développement."
   },
   "skills": {
     "title": "Compétences",
@@ -37,25 +37,34 @@
     "view_demo": "Démo",
     "items": [
       {
-        "name": "Plateforme E-Commerce",
+        "name": "Système de Gestion de Bibliothèque",
         "type": "Projet Personnel",
-        "description": "Application web complète avec panier, paiement et gestion des commandes. Interface responsive et expérience utilisateur optimisée.",
-        "tech": ["React", "Node.js", "MongoDB", "Stripe"],
-        "highlights": ["Architecture microservices", "Authentification JWT", "Paiement sécurisé"]
+        "description": "Application web complète de gestion de bibliothèque avec système d'emprunt, gestion des utilisateurs et catalogue de livres. Interface responsive et intuitive.",
+        "tech": ["PHP", "HTML", "CSS", "Bootstrap"],
+        "highlights": ["Gestion complète des emprunts", "Système de recherche avancée", "Interface responsive"],
+        "github": "https://github.com/medghilly/bibliotheque",
+        "demo": "",
+        "image": "/bibliotheque.jpg"
       },
       {
-        "name": "Infrastructure Réseau Entreprise",
-        "type": "Stage - Chinguitel",
-        "description": "Conception et déploiement d'une architecture réseau complète incluant VLAN, routage OSPF et sécurité périmétrique.",
-        "tech": ["Cisco", "Fortinet", "OSPF", "VLAN"],
-        "highlights": ["Haute disponibilité", "Segmentation sécurisée", "Monitoring centralisé"]
+        "name": "Krilywte - Réservation de Voitures",
+        "type": "Projet Personnel",
+        "description": "Plateforme de réservation de voitures en Mauritanie. Système complet avec gestion des réservations, paiements et administration.",
+        "tech": ["Laravel", "MySQL", "Bootstrap", "Tailwind CSS", "JavaScript"],
+        "highlights": ["Système de réservation en temps réel", "Gestion multi-utilisateurs", "Interface moderne et responsive"],
+        "github": "",
+        "demo": "",
+        "image": "/krilywte.png"
       },
       {
-        "name": "Automatisation Réseau",
-        "type": "Projet Académique",
-        "description": "Scripts Python pour l'automatisation de la configuration et du monitoring d'équipements réseau Cisco.",
-        "tech": ["Python", "Netmiko", "Ansible", "Jinja2"],
-        "highlights": ["Déploiement automatisé", "Rapports temps réel", "Gestion des erreurs"]
+        "name": "Défi Ajir 2025 - Nuit de l'Info",
+        "type": "Compétition - Nuit de l'Informatique",
+        "description": "Projet développé lors de la Nuit de l'Informatique 2025 en collaboration avec <a href='https://medoumar.vercel.app/' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>Mouhamed OUMAR</a>. Application web interactive avec backend temps réel.",
+        "tech": ["React", "Tailwind CSS", "Supabase"],
+        "highlights": ["Développement en équipe", "Collaboration avec Mouhamed OUMAR", "Backend temps réel"],
+        "github": "",
+        "demo": "https://ajir-xi.vercel.app/",
+        "image": "/Ajir.png"
       }
     ]
   },
@@ -86,28 +95,28 @@
     "subtitle": "Mon évolution professionnelle et académique",
     "items": [
       {
-        "year": "2024",
-        "title": "Stage - Ministère des Finances",
+        "year": "2026",
+        "title": "Licence en Réseaux Informatiques et Télécommunications",
+        "location": "ISCAE, Nouakchott",
+        "description": "Formation spécialisée en réseaux informatiques, télécommunications et développement web full stack."
+      },
+      {
+        "year": "2025",
+        "title": "Stage - Chinguitel",
         "location": "Nouakchott, Mauritanie",
-        "description": "Administration système et réseau, support technique et gestion des infrastructures IT."
+        "description": "Stage d'été (Juillet - Septembre 2025) en administration réseau et télécommunications."
       },
       {
         "year": "2023",
-        "title": "Stage - Chinguitel",
-        "location": "Nouakchott, Mauritanie",
-        "description": "Conception et déploiement d'architecture réseau, configuration d'équipements Cisco et Fortinet."
-      },
-      {
-        "year": "2022",
-        "title": "Licence Informatique de Gestion",
+        "title": "Début Licence ISCAE",
         "location": "ISCAE, Nouakchott",
-        "description": "Formation complète en développement, bases de données, réseaux et gestion de projets IT."
+        "description": "Entrée à l'ISCAE en Octobre 2023 pour une formation en réseaux informatiques et télécommunications."
       },
       {
-        "year": "2021",
-        "title": "Baccalauréat Scientifique",
-        "location": "Nouakchott, Mauritanie",
-        "description": "Obtention du baccalauréat avec mention, spécialité mathématiques et sciences."
+        "year": "2023",
+        "title": "Baccalauréat C (Mathématiques)",
+        "location": "Lycée Excellence 1, Nouakchott",
+        "description": "Obtention du baccalauréat série C avec spécialité mathématiques et sciences."
       }
     ]
   },

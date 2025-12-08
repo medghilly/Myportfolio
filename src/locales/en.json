@@ -19,7 +19,7 @@
   "about": {
     "title": "About",
     "subtitle": "Get to know me",
-    "content": "As a Management Information Systems student at ISCAE, I combine my passion for web development and network engineering. My journey has equipped me with solid expertise in modern web solution design as well as network infrastructure administration and security. I'm constantly seeking new technical challenges and opportunities to create innovative solutions that blend performance and elegance."
+    "content": "Student specialized in Computer Networks and Telecommunications, I am also a Full Stack Developer. My training allows me to master both the design and security of complex network infrastructures, as well as the development of modern and high-performance web applications. I combine these two areas of expertise to create complete solutions, blending network robustness with development excellence."
   },
   "skills": {
     "title": "Skills",
@@ -37,25 +37,34 @@
     "view_demo": "Demo",
     "items": [
       {
-        "name": "E-Commerce Platform",
+        "name": "Library Management System",
         "type": "Personal Project",
-        "description": "Complete web application with cart, payment and order management. Responsive interface and optimized user experience.",
-        "tech": ["React", "Node.js", "MongoDB", "Stripe"],
-        "highlights": ["Microservices architecture", "JWT Authentication", "Secure payments"]
+        "description": "Complete web application for library management with borrowing system, user management and book catalog. Responsive and intuitive interface.",
+        "tech": ["PHP", "HTML", "CSS", "Bootstrap"],
+        "highlights": ["Complete borrowing management", "Advanced search system", "Responsive interface"],
+        "github": "https://github.com/medghilly/bibliotheque",
+        "demo": "",
+        "image": "/bibliotheque.jpg"
       },
       {
-        "name": "Enterprise Network Infrastructure",
-        "type": "Internship - Chinguitel",
-        "description": "Design and deployment of a complete network architecture including VLAN, OSPF routing and perimeter security.",
-        "tech": ["Cisco", "Fortinet", "OSPF", "VLAN"],
-        "highlights": ["High availability", "Secure segmentation", "Centralized monitoring"]
+        "name": "Krilywte - Car Booking Platform",
+        "type": "Personal Project",
+        "description": "Car booking platform in Mauritania. Complete system with reservation management, payments and administration.",
+        "tech": ["Laravel", "MySQL", "Bootstrap", "Tailwind CSS", "JavaScript"],
+        "highlights": ["Real-time booking system", "Multi-user management", "Modern responsive interface"],
+        "github": "",
+        "demo": "",
+        "image": "/krilywte.png"
       },
       {
-        "name": "Network Automation",
-        "type": "Academic Project",
-        "description": "Python scripts for automating configuration and monitoring of Cisco network equipment.",
-        "tech": ["Python", "Netmiko", "Ansible", "Jinja2"],
-        "highlights": ["Automated deployment", "Real-time reports", "Error handling"]
+        "name": "Ajir Challenge 2025 - Nuit de l'Info",
+        "type": "Competition - Nuit de l'Informatique",
+        "description": "Project developed during the 2025 Nuit de l'Informatique in collaboration with <a href='https://medoumar.vercel.app/' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>Mouhamed OUMAR</a>. Interactive web application with real-time backend.",
+        "tech": ["React", "Tailwind CSS", "Supabase"],
+        "highlights": ["Team development", "Collaboration with Mouhamed OUMAR", "Real-time backend"],
+        "github": "",
+        "demo": "https://ajir-xi.vercel.app/",
+        "image": "/Ajir.png"
       }
     ]
   },
@@ -86,28 +95,28 @@
     "subtitle": "My professional and academic journey",
     "items": [
       {
-        "year": "2024",
-        "title": "Internship - Ministry of Finance",
+        "year": "2026",
+        "title": "Bachelor's Degree in Computer Networks and Telecommunications",
+        "location": "ISCAE, Nouakchott",
+        "description": "Specialized training in computer networks, telecommunications and full stack web development."
+      },
+      {
+        "year": "2025",
+        "title": "Internship - Chinguitel",
         "location": "Nouakchott, Mauritania",
-        "description": "System and network administration, technical support and IT infrastructure management."
+        "description": "Summer internship (July - September 2025) in network administration and telecommunications."
       },
       {
         "year": "2023",
-        "title": "Internship - Chinguitel",
-        "location": "Nouakchott, Mauritania",
-        "description": "Network architecture design and deployment, Cisco and Fortinet equipment configuration."
-      },
-      {
-        "year": "2022",
-        "title": "Bachelor's in Management Information Systems",
+        "title": "Started Bachelor's at ISCAE",
         "location": "ISCAE, Nouakchott",
-        "description": "Comprehensive training in development, databases, networking and IT project management."
+        "description": "Entered ISCAE in October 2023 for training in computer networks and telecommunications."
       },
       {
-        "year": "2021",
-        "title": "Scientific Baccalaureate",
-        "location": "Nouakchott, Mauritania",
-        "description": "Obtained baccalaureate with honors, specializing in mathematics and sciences."
+        "year": "2023",
+        "title": "Baccalaureate C (Mathematics)",
+        "location": "Excellence 1 High School, Nouakchott",
+        "description": "Obtained baccalaureate series C with specialization in mathematics and sciences."
       }
     ]
   },

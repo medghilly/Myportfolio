@@ -22,11 +22,19 @@ const Projects = () => {
               key={index}
               className="bg-card rounded-2xl overflow-hidden card-hover border border-border flex flex-col"
             >
-              {/* Project header with gradient */}
-              <div className="h-32 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                <span className="text-4xl font-bold text-primary/30">
-                  {project.name.charAt(0)}
-                </span>
+              {/* Project header with image or gradient */}
+              <div className="h-48 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center overflow-hidden">
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <span className="text-4xl font-bold text-primary/30">
+                    {project.name.charAt(0)}
+                  </span>
+                )}
               </div>
 
               <div className="p-6 flex-1 flex flex-col">
@@ -41,9 +49,10 @@ const Projects = () => {
                 </h3>
 
                 {/* Description */}
-                <p className="text-muted-foreground text-sm mb-4 flex-1">
-                  {project.description}
-                </p>
+                <p
+                  className="text-muted-foreground text-sm mb-4 flex-1"
+                  dangerouslySetInnerHTML={{ __html: project.description }}
+                />
 
                 {/* Tech stack */}
                 <div className="flex flex-wrap gap-1.5 mb-4">
@@ -69,20 +78,28 @@ const Projects = () => {
 
                 {/* Actions */}
                 <div className="flex gap-3 mt-auto pt-4 border-t border-border">
-                  <a
-                    href="#"
-                    className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Github size={16} />
-                    {t.projects.view_code}
-                  </a>
-                  <a
-                    href="#"
-                    className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <ExternalLink size={16} />
-                    {t.projects.view_demo}
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <Github size={16} />
+                      {t.projects.view_code}
+                    </a>
+                  )}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <ExternalLink size={16} />
+                      {t.projects.view_demo}
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
