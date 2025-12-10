@@ -1,5 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -11,9 +11,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:contact@example.com', label: 'Email' },
+    { icon: Github, href: 'https://github.com/medghilly', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/muhamed-ghilly', label: 'LinkedIn' },
+    { icon: MessageCircle, href: 'https://wa.me/22246071882', label: 'WhatsApp' },
+    { icon: Mail, href: 'mailto:mohamed.ghelli.elbou@gmail.com', label: 'Email' },
   ];
 
   const handleNavClick = (href: string) => {

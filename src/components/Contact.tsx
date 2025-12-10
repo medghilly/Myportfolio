@@ -50,10 +50,10 @@ const Contact = () => {
   };
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:contact@example.com', label: 'Email' },
-    { icon: MessageCircle, href: 'https://wa.me/', label: 'WhatsApp' },
+    { icon: Github, href: 'https://github.com/medghilly', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/muhamed-ghilly', label: 'LinkedIn' },
+    { icon: MessageCircle, href: 'https://wa.me/22246071882', label: 'WhatsApp' },
+    { icon: Mail, href: 'mailto:mohamed.ghelli.elbou@gmail.com', label: 'Email' },
   ];
 
   return (

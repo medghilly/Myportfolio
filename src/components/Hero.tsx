@@ -1,5 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ArrowDown, Download, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Download, Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -92,7 +92,7 @@ const Hero = () => {
             {/* Social Links */}
             <div className="flex items-center justify-center lg:justify-start gap-4 opacity-0 animate-fade-up animation-delay-500">
               <a
-                href="https://github.com"
+                href="https://github.com/medghilly"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -101,7 +101,7 @@ const Hero = () => {
                 <Github size={20} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/muhamed-ghilly"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -110,7 +110,16 @@ const Hero = () => {
                 <Linkedin size={20} />
               </a>
               <a
-                href="mailto:contact@example.com"
+                href="https://wa.me/22246071882"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-lg bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle size={20} />
+              </a>
+              <a
+                href="mailto:mohamed.ghelli.elbou@gmail.com"
                 className="p-3 rounded-lg bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="Email"
               >
