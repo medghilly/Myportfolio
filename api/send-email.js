@@ -1,6 +1,6 @@
 const { Resend } = require('resend');
 
-const resend = new Resend('re_AaiYdb83_3VMZmE9vAoHwBo89vDrWpG8B');
+const resend = new Resend('re_VULDLAfY_47aTsneiMapP8N2LqfxHSriu');
 
 module.exports = async function handler(req, res) {
   // Only allow POST requests
