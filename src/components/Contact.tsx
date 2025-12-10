@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Github, Linkedin, Mail, MessageCircle, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { sendContactEmail } from '@/lib/emailService';
 
@@ -48,13 +48,6 @@ const Contact = () => {
       setIsSubmitting(false);
     }
   };
-
-  const socialLinks = [
-    { icon: Github, href: 'https://github.com/medghilly', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/muhamed-ghilly', label: 'LinkedIn' },
-    { icon: MessageCircle, href: 'https://wa.me/22246071882', label: 'WhatsApp' },
-    { icon: Mail, href: 'mailto:mohamed.ghelli.elbou@gmail.com', label: 'Email' },
-  ];
 
   return (
     <section id="contact" className="section-spacing">
@@ -135,25 +128,6 @@ const Contact = () => {
                 )}
               </button>
             </form>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex items-center justify-center gap-4 mt-8">
-            {socialLinks.map((link) => {
-              const Icon = link.icon;
-              return (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-lg bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-                  aria-label={link.label}
-                >
-                  <Icon size={20} />
-                </a>
-              );
-            })}
           </div>
         </div>
       </div>

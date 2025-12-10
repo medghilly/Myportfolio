@@ -78,7 +78,7 @@ const Hero = () => {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 mb-8 opacity-0 animate-fade-up animation-delay-400">
+            <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 opacity-0 animate-fade-up animation-delay-400">
               <button onClick={handleScrollToProjects} className="btn-primary flex items-center gap-2">
                 {t.hero.cta_projects}
                 <ArrowDown size={18} />
@@ -86,44 +86,6 @@ const Hero = () => {
               <a href="#" className="btn-secondary flex items-center gap-2">
                 {t.hero.cta_cv}
                 <Download size={18} />
-              </a>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex items-center justify-center lg:justify-start gap-4 opacity-0 animate-fade-up animation-delay-500">
-              <a
-                href="https://github.com/medghilly"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="GitHub"
-              >
-                <Github size={20} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/muhamed-ghilly"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={20} />
-              </a>
-              <a
-                href="https://wa.me/22246071882"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="WhatsApp"
-              >
-                <MessageCircle size={20} />
-              </a>
-              <a
-                href="mailto:mohamed.ghelli.elbou@gmail.com"
-                className="p-3 rounded-lg bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="Email"
-              >
-                <Mail size={20} />
               </a>
             </div>
           </div>
