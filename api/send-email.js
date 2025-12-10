@@ -31,15 +31,15 @@ module.exports = async function handler(req, res) {
     const transporter = nodemailer.createTransporter({
       service: 'gmail',
       auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD,
+        user: 'mohamed.ghelli.elbou@gmail.com',
+        pass: 'fuudfsgsypbrfula',
       },
     });
 
     // Email options
     const mailOptions = {
-      from: process.env.GMAIL_USER,
-      to: process.env.GMAIL_USER, // Send to yourself
+      from: 'mohamed.ghelli.elbou@gmail.com',
+      to: 'mohamed.ghelli.elbou@gmail.com', // Send to yourself
       replyTo: email,
       subject: `Nouveau message de ${name} - Portfolio`,
       html: `
