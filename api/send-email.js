@@ -1,4 +1,5 @@
-const nodemailer = require('nodemailer');
+const fs = require('fs');
+const path = require('path');
 
 module.exports = async function handler(req, res) {
   // Only allow POST requests
@@ -27,42 +28,38 @@ module.exports = async function handler(req, res) {
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
-    // Create transporter using Gmail
-    const transporter = nodemailer.createTransporter({
-      service: 'gmail',
-      auth: {
-        user: 'mohamed.ghelli.elbou@gmail.com',
-        pass: 'fuudfsgsypbrfula',
-      },
-    });
-
-    // Email options
-    const mailOptions = {
-      from: 'mohamed.ghelli.elbou@gmail.com',
-      to: 'mohamed.ghelli.elbou@gmail.com', // Send to yourself
-      replyTo: email,
-      subject: `Nouveau message de ${name} - Portfolio`,
-      html: `
-        <div style="font-family: Arial, sans-serif; padding: 20px;">
-          <h2>Nouveau message depuis votre portfolio</h2>
-          <p><strong>Nom :</strong> ${name}</p>
-          <p><strong>Email :</strong> ${email}</p>
-          <p><strong>Message :</strong></p>
-          <div style="padding: 15px; background-color: #f5f5f5; border-left: 3px solid #007bff;">
-            ${message.replace(/\n/g, '<br>')}
-          </div>
-          <hr style="margin-top: 20px;">
-          <p style="color: #666; font-size: 12px;">Ce message a été envoyé depuis le formulaire de contact de votre portfolio.</p>
-        </div>
-      `,
+    // Create contact message object
+    const contactMessage = {
+      id: Date.now(),
+      name,
+      email,
+      message,
+      date: new Date().toISOString(),
     };
 
-    // Send email
-    await transporter.sendMail(mailOptions);
+    // Path to messages file
+    const messagesFile = path.join(process.cwd(), 'messages.json');
 
-    return res.status(200).json({ success: true, message: 'Email sent successfully' });
+    // Read existing messages
+    let messages = [];
+    if (fs.existsSync(messagesFile)) {
+      const data = fs.readFileSync(messagesFile, 'utf8');
+      messages = JSON.parse(data);
+    }
+
+    // Add new message
+    messages.push(contactMessage);
+
+    // Save to file
+    fs.writeFileSync(messagesFile, JSON.stringify(messages, null, 2));
+
+    return res.status(200).json({
+      success: true,
+      message: 'Message saved successfully',
+      data: contactMessage
+    });
   } catch (error) {
-    console.error('Error sending email:', error);
-    return res.status(500).json({ error: 'Failed to send email', details: error.message });
+    console.error('Error saving message:', error);
+    return res.status(500).json({ error: 'Failed to save message', details: error.message });
   }
-}
+};
