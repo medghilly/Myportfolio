@@ -11,10 +11,15 @@
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Mohamed Ghilly",
-    "title": "Web Developer & Network Engineer",
+    "title": "Network Engineer & Web Developer",
     "subtitle": "Passionate about building fast, secure and well-designed solutions.",
     "cta_projects": "View my projects",
-    "cta_cv": "Download my CV"
+    "cta_cv": "Download my CV",
+    "available": "Available for work",
+    "stat_projects": "projects completed",
+    "stat_experience": "years experience",
+    "stat_domains": "areas of expertise",
+    "back_to_top": "Back to top"
   },
   "about": {
     "title": "About",
@@ -35,7 +40,19 @@
     "subtitle": "Some recent work",
     "view_code": "View code",
     "view_demo": "Demo",
+    "show_more": "View all projects",
+    "show_less": "Show less",
     "items": [
+      {
+        "name": "ISCAE Connect",
+        "type": "Academic Project",
+        "description": "Absence management application for ISCAE. Allows students and teachers to track attendance, view absences and receive notifications.",
+        "tech": ["TypeScript", "React", "Express", "Node.js"],
+        "highlights": ["Real-time attendance tracking", "Student and teacher interface", "Automatic notifications"],
+        "github": "",
+        "demo": "",
+        "image": "/iscae-connect.png"
+      },
       {
         "name": "Library Management System",
         "type": "Personal Project",
@@ -52,7 +69,7 @@
         "description": "Car booking platform in Mauritania. Complete system with reservation management, payments and administration.",
         "tech": ["Laravel", "MySQL", "Bootstrap", "Tailwind CSS", "JavaScript"],
         "highlights": ["Real-time booking system", "Multi-user management", "Modern responsive interface"],
-        "github": "",
+        "github": "https://github.com/medghilly/krilywete",
         "demo": "",
         "image": "/krilywte.png"
       },
@@ -65,6 +82,16 @@
         "github": "",
         "demo": "https://ajir-xi.vercel.app/",
         "image": "/Ajir.png"
+      },
+      {
+        "name": "Library Management System (Java)",
+        "type": "Personal Project",
+        "description": "Desktop library management application developed in Java. Manage books, members and borrowings with a graphical interface.",
+        "tech": ["Java", "JavaFX", "MySQL"],
+        "highlights": ["Desktop graphical interface", "Borrowing and return management", "Advanced book search"],
+        "github": "https://github.com/medghilly/Gestion-Bibliotheque",
+        "demo": "",
+        "image": ""
       }
     ]
   },

@@ -1,8 +1,19 @@
+import { useRef, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ArrowDown, Download, Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
+import { ArrowDown, Download } from 'lucide-react';
 
 const Hero = () => {
   const { t } = useLanguage();
+  const titleRef = useRef<HTMLSpanElement>(null);
+
+  // Reset typing animation when language changes
+  useEffect(() => {
+    const el = titleRef.current;
+    if (!el) return;
+    el.classList.remove('typing-effect');
+    void el.offsetWidth; // force reflow to restart animation
+    el.classList.add('typing-effect');
+  }, [t.hero.title]);
 
   const handleScrollToProjects = () => {
     const element = document.querySelector('#projects');
@@ -20,74 +31,66 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.3)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.3)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
       <div className="section-container relative z-10 pt-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <div className="max-w-3xl mx-auto text-center">
 
-          {/* Photo professionnelle - Left side */}
-          <div className="flex justify-center lg:justify-end order-1 lg:order-1">
-            <div className="relative group">
-              {/* Decorative gradient background */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 via-primary/10 to-transparent rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500" />
+          {/* Availability badge */}
+          <div className="flex justify-center mb-5 opacity-0 animate-fade-in animation-delay-100">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/30 text-green-600 dark:text-green-400 text-sm font-medium">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              {t.hero.available}
+            </span>
+          </div>
 
-              {/* Image container */}
-              <div className="relative">
-                <div className="w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden border-4 border-primary/20 shadow-2xl transform group-hover:scale-105 transition-transform duration-500 flex items-center justify-center relative">
-                  {/* Light mode - image with white background */}
-                  <div className="absolute inset-0 bg-white dark:hidden" />
-                  <img
-                    src="/profile.png"
-                    alt={t.hero.name}
-                    className="h-[180%] w-auto object-cover object-[center_20%] relative z-10 dark:hidden"
-                  />
+          {/* Greeting */}
+          <p className="text-primary font-semibold text-lg mb-4 opacity-0 animate-fade-up">
+            {t.hero.greeting}
+          </p>
 
-                  {/* Dark mode - image without background + gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-background hidden dark:block" />
-                  <img
-                    src="/profile-dark.png"
-                    alt={t.hero.name}
-                    className="h-[180%] w-auto object-contain object-[center_20%] relative z-10 hidden dark:block"
-                  />
-                </div>
+          {/* Name */}
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-foreground mb-4 opacity-0 animate-fade-up animation-delay-100 tracking-tight">
+            {t.hero.name}
+          </h1>
 
-                {/* Decorative corner accent */}
-                <div className="absolute -top-3 -right-3 w-16 h-16 bg-primary/20 rounded-2xl transform rotate-12 group-hover:rotate-45 transition-transform duration-500" />
-                <div className="absolute -bottom-3 -left-3 w-12 h-12 bg-primary/10 rounded-xl transform -rotate-12 group-hover:-rotate-45 transition-transform duration-500" />
-              </div>
+          {/* Title with typing effect */}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 opacity-0 animate-fade-up animation-delay-200 overflow-hidden flex justify-center" style={{ color: 'hsl(217 91% 45%)' }}>
+            <span ref={titleRef} className="typing-effect" style={{ borderRightColor: 'hsl(217 91% 45%)' }}>
+              {t.hero.title}
+            </span>
+          </h2>
+
+          {/* Subtitle */}
+          <p className="text-foreground/70 text-lg mb-8 opacity-0 animate-fade-up animation-delay-300 font-medium">
+            {t.hero.subtitle}
+          </p>
+
+          {/* Animated stats */}
+          <div className="flex gap-8 justify-center mb-10 opacity-0 animate-fade-up animation-delay-400">
+            <div className="text-center">
+              <p className="text-3xl font-extrabold text-foreground">3+</p>
+              <p className="text-sm text-foreground/60 font-medium mt-0.5">{t.hero.stat_projects}</p>
+            </div>
+            <div className="w-px bg-border" />
+            <div className="text-center">
+              <p className="text-3xl font-extrabold text-foreground">2+</p>
+              <p className="text-sm text-foreground/60 font-medium mt-0.5">{t.hero.stat_experience}</p>
+            </div>
+            <div className="w-px bg-border" />
+            <div className="text-center">
+              <p className="text-3xl font-extrabold text-foreground">2</p>
+              <p className="text-sm text-foreground/60 font-medium mt-0.5">{t.hero.stat_domains}</p>
             </div>
           </div>
 
-          {/* Text content - Right side */}
-          <div className="text-center lg:text-left order-2 lg:order-2">
-            {/* Greeting */}
-            <p className="text-primary font-medium mb-4 opacity-0 animate-fade-up">
-              {t.hero.greeting}
-            </p>
-
-            {/* Name */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-4 opacity-0 animate-fade-up animation-delay-100">
-              {t.hero.name}
-            </h1>
-
-            {/* Title */}
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold gradient-text mb-6 opacity-0 animate-fade-up animation-delay-200">
-              {t.hero.title}
-            </h2>
-
-            {/* Subtitle */}
-            <p className="text-muted-foreground text-lg mb-10 opacity-0 animate-fade-up animation-delay-300">
-              {t.hero.subtitle}
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 opacity-0 animate-fade-up animation-delay-400">
-              <button onClick={handleScrollToProjects} className="btn-primary flex items-center gap-2">
-                {t.hero.cta_projects}
-                <ArrowDown size={18} />
-              </button>
-              <a href="#" className="btn-secondary flex items-center gap-2">
-                {t.hero.cta_cv}
-                <Download size={18} />
-              </a>
-            </div>
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-up animation-delay-500">
+            <button onClick={handleScrollToProjects} className="btn-primary flex items-center gap-2">
+              {t.hero.cta_projects}
+              <ArrowDown size={18} />
+            </button>
+            <a href="#" className="btn-secondary flex items-center gap-2">
+              {t.hero.cta_cv}
+              <Download size={18} />
+            </a>
           </div>
 
         </div>

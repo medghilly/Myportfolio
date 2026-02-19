@@ -1,13 +1,22 @@
+import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { Code, Network, Cog, GraduationCap } from 'lucide-react';
 
 const Services = () => {
   const { t } = useLanguage();
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
 
   const icons = [Code, Network, Cog, GraduationCap];
 
   return (
-    <section id="services" className="section-spacing">
+    <section
+      ref={ref as React.RefObject<HTMLElement>}
+      id="services"
+      className={`section-spacing transition-all duration-700 ease-out ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+    >
       <div className="section-container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">

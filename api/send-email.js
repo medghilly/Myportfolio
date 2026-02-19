@@ -1,6 +1,6 @@
 const { Resend } = require('resend');
 
-const resend = new Resend('re_VULDLAfY_47aTsneiMapP8N2LqfxHSriu');
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 module.exports = async function handler(req, res) {
   // Only allow POST requests
@@ -32,7 +32,7 @@ module.exports = async function handler(req, res) {
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>',
-      to: ['mohamed.ghelli.elbou@gmail.com'],
+      to: [process.env.CONTACT_EMAIL],
       replyTo: email,
       subject: `Nouveau message de ${name} - Portfolio`,
       html: `

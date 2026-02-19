@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { Send } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { sendContactEmail } from '@/lib/emailService';
 
 const Contact = () => {
   const { t } = useLanguage();
+  const { ref, isVisible } = useScrollReveal();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -50,7 +52,13 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-spacing">
+    <section
+      ref={ref as React.RefObject<HTMLElement>}
+      id="contact"
+      className={`section-spacing transition-all duration-700 ease-out ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+    >
       <div className="section-container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">

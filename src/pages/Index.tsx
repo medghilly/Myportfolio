@@ -7,11 +7,13 @@ import Services from '@/components/Services';
 import Timeline from '@/components/Timeline';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import ScrollUI from '@/components/ScrollUI';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <ScrollUI />
       <main>
         <Hero />
         <About />

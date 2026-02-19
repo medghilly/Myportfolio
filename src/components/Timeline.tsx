@@ -1,11 +1,20 @@
+import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { Briefcase, GraduationCap } from 'lucide-react';
 
 const Timeline = () => {
   const { t } = useLanguage();
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.05 });
 
   return (
-    <section id="timeline" className="section-spacing bg-secondary/30">
+    <section
+      ref={ref as React.RefObject<HTMLElement>}
+      id="timeline"
+      className={`section-spacing bg-secondary/30 transition-all duration-700 ease-out ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+    >
       <div className="section-container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -32,9 +41,10 @@ const Timeline = () => {
               return (
                 <div
                   key={index}
-                  className={`relative flex items-start gap-6 md:gap-0 ${
+                  className={`relative flex items-start gap-6 md:gap-0 transition-all duration-700 ease-out ${
                     isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
+                  } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+                  style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
                 >
                   {/* Timeline dot */}
                   <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-primary ring-4 ring-background -translate-x-1/2 mt-6 z-10" />
