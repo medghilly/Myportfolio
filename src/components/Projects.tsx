@@ -54,13 +54,13 @@ const Projects = () => {
                 style={{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }}
               >
                 {/* Image — full width, fixed height */}
-                <div className="w-full h-56 relative overflow-hidden bg-secondary">
+                <div className="w-full h-48 sm:h-56 md:h-64 relative overflow-hidden bg-secondary">
                   {project.image ? (
                     <>
                       <img
                         src={project.image}
                         alt={project.name}
-                        className={`absolute inset-0 w-full h-full object-cover object-top
+                        className={`absolute inset-0 w-full h-full object-contain
                           transition-transform duration-700 ease-out
                           ${isHovered ? 'scale-105' : 'scale-100'}`}
                       />
