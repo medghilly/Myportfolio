@@ -1,9 +1,19 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Github, Linkedin, Mail, MessageCircle, MapPin, GraduationCap, Clock } from 'lucide-react';
-// Note: Github/Linkedin deprecation hints are cosmetic only — icons still work
+import { useState, useEffect } from 'react';
 
 const Footer = () => {
   const { t } = useLanguage();
+  const [time, setTime] = useState(() =>
+    new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', timeZone: 'Africa/Nouakchott' })
+  );
+
+  useEffect(() => {
+    const tick = () =>
+      setTime(new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', timeZone: 'Africa/Nouakchott' }));
+    const id = setInterval(tick, 60000);
+    return () => clearInterval(id);
+  }, []);
 
   const quickLinks = [
     { key: 'home', href: '#home' },
@@ -24,13 +34,6 @@ const Footer = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
-  const now = new Date();
-  const time = now.toLocaleTimeString(t === (t as typeof t) ? 'fr-FR' : 'en-US', {
-    hour: '2-digit',
-    minute: '2-digit',
-    timeZone: 'Africa/Nouakchott',
-  });
 
   return (
     <footer className="bg-card border-t border-border">

@@ -42,6 +42,7 @@
     "view_demo": "Démo",
     "show_more": "Voir tous les projets",
     "show_less": "Réduire",
+    "coming_soon": "Bientôt disponible",
     "items": [
       {
         "name": "ISCAE Connect",
@@ -49,7 +50,7 @@
         "description": "Application de gestion des absences pour l'ISCAE. Permet aux étudiants et professeurs de suivre les présences, consulter les absences et recevoir des notifications.",
         "tech": ["TypeScript", "React", "Express", "Node.js"],
         "highlights": ["Suivi des absences en temps réel", "Interface étudiants et professeurs", "Notifications automatiques"],
-        "github": "",
+        "github": "https://github.com/medghilly/iscae-connect",
         "demo": "",
         "image": "/iscae-connect.png"
       },

@@ -42,6 +42,7 @@
     "view_demo": "Demo",
     "show_more": "View all projects",
     "show_less": "Show less",
+    "coming_soon": "Coming Soon",
     "items": [
       {
         "name": "ISCAE Connect",
@@ -49,7 +50,7 @@
         "description": "Absence management application for ISCAE. Allows students and teachers to track attendance, view absences and receive notifications.",
         "tech": ["TypeScript", "React", "Express", "Node.js"],
         "highlights": ["Real-time attendance tracking", "Student and teacher interface", "Automatic notifications"],
-        "github": "",
+        "github": "https://github.com/medghilly/iscae-connect",
         "demo": "",
         "image": "/iscae-connect.png"
       },

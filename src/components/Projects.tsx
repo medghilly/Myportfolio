@@ -127,8 +127,8 @@ const Projects = () => {
                   </ul>
 
                   {/* Actions */}
-                  <div className="flex gap-3 pt-4 border-t border-border">
-                    {project.github && (
+                  <div className="flex gap-3 pt-4 border-t border-border flex-wrap">
+                    {project.github ? (
                       <a
                         href={project.github}
                         target="_blank"
@@ -142,8 +142,14 @@ const Projects = () => {
                         <Github size={15} />
                         {t.projects.view_code}
                       </a>
+                    ) : (
+                      <span className="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg
+                        bg-secondary/50 text-muted-foreground border border-dashed border-border cursor-not-allowed">
+                        <Github size={15} />
+                        {t.projects.coming_soon}
+                      </span>
                     )}
-                    {project.demo && (
+                    {project.demo ? (
                       <a
                         href={project.demo}
                         target="_blank"
@@ -157,6 +163,12 @@ const Projects = () => {
                         <ExternalLink size={15} />
                         {t.projects.view_demo}
                       </a>
+                    ) : (
+                      <span className="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg
+                        bg-primary/10 text-primary/50 border border-dashed border-primary/30 cursor-not-allowed">
+                        <ExternalLink size={15} />
+                        {t.projects.coming_soon}
+                      </span>
                     )}
                   </div>
                 </div>
