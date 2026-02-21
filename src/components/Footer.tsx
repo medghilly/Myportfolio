@@ -29,7 +29,7 @@ const Footer = () => {
   const time = now.toLocaleTimeString(t === (t as typeof t) ? 'fr-FR' : 'en-US', {
     hour: '2-digit',
     minute: '2-digit',
-    timeZone: 'Asia/Riyadh',
+    timeZone: 'Africa/Nouakchott',
   });
 
   return (
@@ -53,7 +53,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock size={14} className="text-primary shrink-0" />
-                <span>GMT+3 · {time}</span>
+                <span>GMT+0 · {time}</span>
               </div>
             </div>
             <p className="text-muted-foreground text-xs mt-4">
