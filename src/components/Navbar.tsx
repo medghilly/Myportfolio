@@ -53,7 +53,7 @@ const Navbar = () => {
             }}
           >
             <span className="text-foreground">Mohamed</span>
-            <span className="gradient-text">Ghilly</span>
+            <span className="gradient-text">Ghelli</span>
           </a>
 
           {/* Desktop Navigation */}

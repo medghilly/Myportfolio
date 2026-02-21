@@ -66,7 +66,7 @@ const Hero = () => {
           {/* Animated stats */}
           <div className="flex gap-8 justify-center mb-10 opacity-0 animate-fade-up animation-delay-400">
             <div className="text-center">
-              <p className="text-3xl font-extrabold text-foreground">3+</p>
+              <p className="text-3xl font-extrabold text-foreground">6+</p>
               <p className="text-sm text-foreground/60 font-medium mt-0.5">{t.hero.stat_projects}</p>
             </div>
             <div className="w-px bg-border" />
