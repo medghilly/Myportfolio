@@ -87,7 +87,7 @@ const Hero = () => {
               {t.hero.cta_projects}
               <ArrowDown size={18} />
             </button>
-            <a href="/CV.pdf" download="Mohamed_Ghelli_CV.pdf" className="btn-secondary flex items-center gap-2">
+            <a href="/CV.pdf" target="_blank" rel="noopener noreferrer" className="btn-secondary flex items-center gap-2">
               {t.hero.cta_cv}
               <Download size={18} />
             </a>

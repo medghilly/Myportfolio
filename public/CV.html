@@ -8,93 +8,109 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Times New Roman', Times, serif;
-      font-size: 11pt;
+      font-size: 10pt;
       color: #000;
       background: #fff;
       max-width: 800px;
       margin: 0 auto;
-      padding: 32px 40px;
-      line-height: 1.4;
+      padding: 22px 36px;
+      line-height: 1.3;
+    }
+    .icon {
+      display: inline-block;
+      width: 11px;
+      height: 11px;
+      vertical-align: middle;
+      margin-right: 3px;
+      position: relative;
+      top: -1px;
     }
     h1 {
-      font-size: 22pt;
+      font-size: 19pt;
       text-align: center;
       font-weight: bold;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     .contact-line {
       text-align: center;
-      font-size: 10pt;
-      margin-bottom: 4px;
+      font-size: 9pt;
+      margin-bottom: 3px;
     }
     .contact-line a { color: #000; text-decoration: none; }
     .section-title {
-      font-size: 12pt;
+      font-size: 11pt;
       font-weight: bold;
       text-transform: uppercase;
       border-bottom: 1.5px solid #000;
-      margin-top: 14px;
-      margin-bottom: 6px;
+      margin-top: 10px;
+      margin-bottom: 4px;
       padding-bottom: 2px;
     }
-    .about-text {
-      font-size: 10.5pt;
-      margin-bottom: 4px;
-    }
-    .entry {
-      margin-bottom: 8px;
-    }
+    .about-text { font-size: 9.5pt; margin-bottom: 3px; }
+    .entry { margin-bottom: 5px; }
     .entry-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
     }
-    .entry-title { font-weight: bold; font-size: 11pt; }
-    .entry-date { font-size: 10pt; white-space: nowrap; }
-    .entry-sub { font-size: 10.5pt; font-style: italic; }
-    ul {
-      margin-left: 20px;
-      margin-top: 3px;
+    .entry-title { font-weight: bold; font-size: 10pt; }
+    .entry-date { font-size: 9pt; white-space: nowrap; }
+    .entry-sub { font-size: 9.5pt; }
+    ul { margin-left: 18px; margin-top: 2px; }
+    ul li { font-size: 9.5pt; margin-bottom: 1px; }
+    /* Projects compact style */
+    .project-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
     }
-    ul li { font-size: 10.5pt; margin-bottom: 2px; }
+    .project-name { font-weight: bold; font-size: 10pt; }
+    .project-type { font-weight: normal; font-size: 9.5pt; }
+    .project-link { font-size: 9pt; color: #000; white-space: nowrap; }
+    .project-link a { color: #000; }
+    .project-desc { font-size: 9.5pt; margin-bottom: 4px; margin-left: 0; }
+    .project-desc li { list-style: disc; margin-left: 18px; }
     .skills-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4px 20px;
-      margin-top: 4px;
+      gap: 3px 20px;
+      margin-top: 3px;
     }
-    .skill-category { font-weight: bold; font-size: 10.5pt; }
-    .skill-list { font-size: 10.5pt; }
+    .skill-category { font-weight: bold; font-size: 9.5pt; }
+    .skill-list { font-size: 9.5pt; }
     .lang-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
-      margin-top: 4px;
+      gap: 3px;
+      margin-top: 3px;
     }
-    .lang-item { font-size: 10.5pt; }
-    @media print {
-      body { padding: 20px 30px; }
-    }
+    .lang-item { font-size: 9.5pt; }
+    @media print { body { padding: 15px 25px; } }
   </style>
 </head>
 <body>
 
   <h1>Mohamed Ghelli Elbou</h1>
   <p class="contact-line">
-    Nouakchott, Mauritanie &nbsp;|&nbsp;
-    <a href="mailto:mohamed.ghelli.elbou@gmail.com">mohamed.ghelli.elbou@gmail.com</a> &nbsp;|&nbsp;
-    +222 46 07 18 82
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Nouakchott, Mauritanie
+    &nbsp;|&nbsp;
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:mohamed.ghelli.elbou@gmail.com">mohamed.ghelli.elbou@gmail.com</a>
+    &nbsp;|&nbsp;
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.27 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+222 46 07 18 82
   </p>
   <p class="contact-line">
-    <a href="https://mohamedghelli.vercel.app">mohamedghelli.vercel.app</a> &nbsp;|&nbsp;
-    <a href="https://linkedin.com/in/muhamed-ghilly">linkedin.com/in/muhamed-ghilly</a> &nbsp;|&nbsp;
-    <a href="https://github.com/medghilly">github.com/medghilly</a>
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><a href="https://mohamedghelli.vercel.app">mohamedghelli.vercel.app</a>
+    &nbsp;|&nbsp;
+    <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><a href="https://linkedin.com/in/muhamed-ghilly">linkedin.com/in/muhamed-ghilly</a>
+    &nbsp;|&nbsp;
+    <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg><a href="https://github.com/medghilly">github.com/medghilly</a>
   </p>
 
   <!-- ABOUT -->
   <div class="section-title">À Propos</div>
   <p class="about-text">
-    <strong>About Me: Étudiant en Réseaux Informatiques | Développeur Full Stack</strong><br/>
+    <strong>Étudiant en Réseaux Informatiques | Développeur Full Stack</strong><br/>
     Étudiant en 3ème année de Licence en Réseaux Informatiques et Télécommunications à l'ISCAE de Nouakchott,
     avec une solide expérience en développement web full stack. Maîtrise de la conception d'architectures réseau
     (VLANs, OSPF, routage inter-VLAN) et du développement d'applications web modernes.
@@ -112,7 +128,6 @@
     <div class="entry-sub">Licence en Réseaux Informatiques et Télécommunications — Nouakchott, Mauritanie</div>
     <ul>
       <li>Spécialisation : réseaux informatiques, télécommunications et développement web full stack</li>
-      <li>Modules clés : Architecture réseaux, Protocoles TCP/IP, Sécurité, Développement Web</li>
     </ul>
   </div>
 
@@ -136,12 +151,9 @@
     <ul>
       <li>Conception d'une architecture réseau Three-Tier complète simulée sous Cisco Packet Tracer</li>
       <li>Segmentation du réseau en VLANs par département (Direction, Technique, Finance, IT)</li>
-      <li>Configuration du routage inter-VLAN sécurisé (Router-on-a-Stick, Switch L3)</li>
-      <li>Déploiement du protocole de routage dynamique OSPF pour la redondance et haute disponibilité</li>
+      <li>Configuration du routage inter-VLAN sécurisé (Router-on-a-Stick) et déploiement OSPF</li>
       <li>Mise en place des services internes : DHCP, DNS, Web (Intranet), FTP</li>
-      <li>Élaboration du plan d'adressage IP structuré (/24 par VLAN)</li>
-      <li>Configuration des trunks IEEE 802.1Q entre switches et routeurs</li>
-      <li>Documentation technique complète du projet réseau professionnel</li>
+      <li>Configuration des trunks IEEE 802.1Q et documentation technique du projet</li>
     </ul>
   </div>
 
@@ -149,49 +161,34 @@
   <div class="section-title">Projets</div>
 
   <div class="entry">
-    <div class="entry-header">
-      <span class="entry-title">ISCAE Connect — Application de Gestion des Absences</span>
-      <span class="entry-date">2025</span>
+    <div class="project-row">
+      <span class="project-name">ISCAE Connect <span class="project-type">(Application Web — Projet Académique)</span></span>
+      <span class="project-link"><a href="https://github.com/medghilly/iscae-connect">github.com/medghilly/iscae-connect</a></span>
     </div>
-    <div class="entry-sub">TypeScript · React · Express · Node.js | <a href="https://github.com/medghilly/iscae-connect">github.com/medghilly/iscae-connect</a></div>
-    <ul>
-      <li>Application full stack de gestion des absences pour l'ISCAE (étudiants et professeurs)</li>
-      <li>Suivi des présences en temps réel, notifications automatiques, tableau de bord administrateur</li>
+    <ul class="project-desc">
+      <li>Application full stack de gestion des absences pour l'ISCAE — TypeScript, React, Express, Node.js</li>
+      <li>Tableau de bord administrateur, suivi des présences en temps réel, notifications automatiques</li>
     </ul>
   </div>
 
   <div class="entry">
-    <div class="entry-header">
-      <span class="entry-title">Krilywte — Plateforme de Réservation de Voitures</span>
-      <span class="entry-date">2025</span>
+    <div class="project-row">
+      <span class="project-name">Krilywte <span class="project-type">(Application Web — Projet Personnel)</span></span>
+      <span class="project-link"><a href="https://github.com/medghilly/krilywete">github.com/medghilly/krilywete</a></span>
     </div>
-    <div class="entry-sub">Laravel · MySQL · Bootstrap · Tailwind CSS · JavaScript | <a href="https://github.com/medghilly/krilywete">github.com/medghilly/krilywete</a></div>
-    <ul>
-      <li>Plateforme de réservation de voitures en ligne pour la Mauritanie</li>
+    <ul class="project-desc">
+      <li>Plateforme de réservation de voitures en ligne pour la Mauritanie — Laravel, MySQL, Bootstrap, JavaScript</li>
       <li>Gestion des réservations, paiements et administration multi-utilisateurs</li>
     </ul>
   </div>
 
   <div class="entry">
-    <div class="entry-header">
-      <span class="entry-title">Système de Gestion de Bibliothèque</span>
-      <span class="entry-date">2024</span>
+    <div class="project-row">
+      <span class="project-name">Défi Ajir 2025 <span class="project-type">(Nuit de l'Informatique)</span></span>
+      <span class="project-link"><a href="https://ajir-xi.vercel.app">Demo</a></span>
     </div>
-    <div class="entry-sub">PHP · HTML · CSS · Bootstrap | <a href="https://github.com/medghilly/bibliotheque">github.com/medghilly/bibliotheque</a></div>
-    <ul>
-      <li>Application web de gestion des emprunts, utilisateurs et catalogue de livres</li>
-    </ul>
-  </div>
-
-  <div class="entry">
-    <div class="entry-header">
-      <span class="entry-title">Défi Ajir 2025 — Nuit de l'Informatique</span>
-      <span class="entry-date">2025</span>
-    </div>
-    <div class="entry-sub">React · Tailwind CSS · Supabase | <a href="https://ajir-xi.vercel.app">ajir-xi.vercel.app</a></div>
-    <ul>
-      <li>Projet développé en équipe lors de la Nuit de l'Informatique 2025</li>
-      <li>Application interactive avec backend temps réel (Supabase)</li>
+    <ul class="project-desc">
+      <li>Application interactive développée en équipe lors de la Nuit de l'Informatique 2025 — React, Supabase</li>
     </ul>
   </div>
 
@@ -200,14 +197,14 @@
   <div class="skills-grid">
     <div>
       <span class="skill-category">Réseaux & Sécurité :</span><br/>
-      <span class="skill-list">Cisco Packet Tracer, VLANs, OSPF, DHCP, DNS, TCP/IP, Routage inter-VLAN, Trunking 802.1Q, FTP</span>
+      <span class="skill-list">Cisco Packet Tracer, VLANs, OSPF, DHCP, DNS, TCP/IP, Routage inter-VLAN, Trunking 802.1Q</span>
     </div>
     <div>
-      <span class="skill-category">Développement Web Frontend :</span><br/>
+      <span class="skill-category">Développement Frontend :</span><br/>
       <span class="skill-list">React, TypeScript, JavaScript, Tailwind CSS, Bootstrap, HTML5, CSS3</span>
     </div>
     <div style="margin-top:6px">
-      <span class="skill-category">Développement Web Backend :</span><br/>
+      <span class="skill-category">Développement Backend :</span><br/>
       <span class="skill-list">Node.js, Express, Laravel, PHP, MySQL, Supabase, REST API</span>
     </div>
     <div style="margin-top:6px">
