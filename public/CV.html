@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV - Mohamed Ghelli</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 11pt;
+      color: #000;
+      background: #fff;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 32px 40px;
+      line-height: 1.4;
+    }
+    h1 {
+      font-size: 22pt;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    .contact-line {
+      text-align: center;
+      font-size: 10pt;
+      margin-bottom: 4px;
+    }
+    .contact-line a { color: #000; text-decoration: none; }
+    .section-title {
+      font-size: 12pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-bottom: 1.5px solid #000;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      padding-bottom: 2px;
+    }
+    .about-text {
+      font-size: 10.5pt;
+      margin-bottom: 4px;
+    }
+    .entry {
+      margin-bottom: 8px;
+    }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .entry-title { font-weight: bold; font-size: 11pt; }
+    .entry-date { font-size: 10pt; white-space: nowrap; }
+    .entry-sub { font-size: 10.5pt; font-style: italic; }
+    ul {
+      margin-left: 20px;
+      margin-top: 3px;
+    }
+    ul li { font-size: 10.5pt; margin-bottom: 2px; }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 20px;
+      margin-top: 4px;
+    }
+    .skill-category { font-weight: bold; font-size: 10.5pt; }
+    .skill-list { font-size: 10.5pt; }
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      margin-top: 4px;
+    }
+    .lang-item { font-size: 10.5pt; }
+    @media print {
+      body { padding: 20px 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mohamed Ghelli Elbou</h1>
+  <p class="contact-line">
+    Nouakchott, Mauritanie &nbsp;|&nbsp;
+    <a href="mailto:mohamed.ghelli.elbou@gmail.com">mohamed.ghelli.elbou@gmail.com</a> &nbsp;|&nbsp;
+    +222 46 07 18 82
+  </p>
+  <p class="contact-line">
+    <a href="https://mohamedghelli.vercel.app">mohamedghelli.vercel.app</a> &nbsp;|&nbsp;
+    <a href="https://linkedin.com/in/muhamed-ghilly">linkedin.com/in/muhamed-ghilly</a> &nbsp;|&nbsp;
+    <a href="https://github.com/medghilly">github.com/medghilly</a>
+  </p>
+
+  <!-- ABOUT -->
+  <div class="section-title">À Propos</div>
+  <p class="about-text">
+    <strong>About Me: Étudiant en Réseaux Informatiques | Développeur Full Stack</strong><br/>
+    Étudiant en 3ème année de Licence en Réseaux Informatiques et Télécommunications à l'ISCAE de Nouakchott,
+    avec une solide expérience en développement web full stack. Maîtrise de la conception d'architectures réseau
+    (VLANs, OSPF, routage inter-VLAN) et du développement d'applications web modernes.
+    Motivé, rigoureux et orienté solutions.
+  </p>
+
+  <!-- EDUCATION -->
+  <div class="section-title">Formation</div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Institut Supérieur de Comptabilité et d'Administration des Entreprises (ISCAE)</span>
+      <span class="entry-date">Octobre 2023 – Présent</span>
+    </div>
+    <div class="entry-sub">Licence en Réseaux Informatiques et Télécommunications — Nouakchott, Mauritanie</div>
+    <ul>
+      <li>Spécialisation : réseaux informatiques, télécommunications et développement web full stack</li>
+      <li>Modules clés : Architecture réseaux, Protocoles TCP/IP, Sécurité, Développement Web</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Lycée Excellence 1, Nouakchott</span>
+      <span class="entry-date">2023</span>
+    </div>
+    <div class="entry-sub">Baccalauréat Série C — Mathématiques et Sciences Physiques</div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section-title">Expérience</div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Stagiaire en Réseaux et Télécommunications — Chinguitel</span>
+      <span class="entry-date">Juillet – Septembre 2025</span>
+    </div>
+    <div class="entry-sub">Service Réseau et Télécommunications — Nouakchott, Mauritanie</div>
+    <ul>
+      <li>Conception d'une architecture réseau Three-Tier complète simulée sous Cisco Packet Tracer</li>
+      <li>Segmentation du réseau en VLANs par département (Direction, Technique, Finance, IT)</li>
+      <li>Configuration du routage inter-VLAN sécurisé (Router-on-a-Stick, Switch L3)</li>
+      <li>Déploiement du protocole de routage dynamique OSPF pour la redondance et haute disponibilité</li>
+      <li>Mise en place des services internes : DHCP, DNS, Web (Intranet), FTP</li>
+      <li>Élaboration du plan d'adressage IP structuré (/24 par VLAN)</li>
+      <li>Configuration des trunks IEEE 802.1Q entre switches et routeurs</li>
+      <li>Documentation technique complète du projet réseau professionnel</li>
+    </ul>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section-title">Projets</div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">ISCAE Connect — Application de Gestion des Absences</span>
+      <span class="entry-date">2025</span>
+    </div>
+    <div class="entry-sub">TypeScript · React · Express · Node.js | <a href="https://github.com/medghilly/iscae-connect">github.com/medghilly/iscae-connect</a></div>
+    <ul>
+      <li>Application full stack de gestion des absences pour l'ISCAE (étudiants et professeurs)</li>
+      <li>Suivi des présences en temps réel, notifications automatiques, tableau de bord administrateur</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Krilywte — Plateforme de Réservation de Voitures</span>
+      <span class="entry-date">2025</span>
+    </div>
+    <div class="entry-sub">Laravel · MySQL · Bootstrap · Tailwind CSS · JavaScript | <a href="https://github.com/medghilly/krilywete">github.com/medghilly/krilywete</a></div>
+    <ul>
+      <li>Plateforme de réservation de voitures en ligne pour la Mauritanie</li>
+      <li>Gestion des réservations, paiements et administration multi-utilisateurs</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Système de Gestion de Bibliothèque</span>
+      <span class="entry-date">2024</span>
+    </div>
+    <div class="entry-sub">PHP · HTML · CSS · Bootstrap | <a href="https://github.com/medghilly/bibliotheque">github.com/medghilly/bibliotheque</a></div>
+    <ul>
+      <li>Application web de gestion des emprunts, utilisateurs et catalogue de livres</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Défi Ajir 2025 — Nuit de l'Informatique</span>
+      <span class="entry-date">2025</span>
+    </div>
+    <div class="entry-sub">React · Tailwind CSS · Supabase | <a href="https://ajir-xi.vercel.app">ajir-xi.vercel.app</a></div>
+    <ul>
+      <li>Projet développé en équipe lors de la Nuit de l'Informatique 2025</li>
+      <li>Application interactive avec backend temps réel (Supabase)</li>
+    </ul>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section-title">Compétences Techniques</div>
+  <div class="skills-grid">
+    <div>
+      <span class="skill-category">Réseaux & Sécurité :</span><br/>
+      <span class="skill-list">Cisco Packet Tracer, VLANs, OSPF, DHCP, DNS, TCP/IP, Routage inter-VLAN, Trunking 802.1Q, FTP</span>
+    </div>
+    <div>
+      <span class="skill-category">Développement Web Frontend :</span><br/>
+      <span class="skill-list">React, TypeScript, JavaScript, Tailwind CSS, Bootstrap, HTML5, CSS3</span>
+    </div>
+    <div style="margin-top:6px">
+      <span class="skill-category">Développement Web Backend :</span><br/>
+      <span class="skill-list">Node.js, Express, Laravel, PHP, MySQL, Supabase, REST API</span>
+    </div>
+    <div style="margin-top:6px">
+      <span class="skill-category">Outils & DevOps :</span><br/>
+      <span class="skill-list">Git, GitHub, Linux, Vercel, VS Code, Vite</span>
+    </div>
+  </div>
+
+  <!-- LANGUAGES -->
+  <div class="section-title">Langues</div>
+  <div class="lang-grid">
+    <div class="lang-item"><strong>Arabe</strong> — Langue maternelle</div>
+    <div class="lang-item"><strong>Français</strong> — Courant (B2/C1)</div>
+    <div class="lang-item"><strong>Anglais</strong> — Intermédiaire (B1)</div>
+  </div>
+
+</body>
+</html>
