@@ -55,6 +55,16 @@
         "image": "/iscae-connect.png"
       },
       {
+        "name": "Mawashi App",
+        "type": "Mobile App — Team Project",
+        "description": "Mobile application built by a team of 3. Platform connecting livestock breeders and buyers in Mauritania, with listings management and real-time messaging.",
+        "tech": ["Flutter", "Dart", "Supabase"],
+        "highlights": ["Collaborative project — team of 3", "Real-time backend with Supabase", "Modern mobile UI"],
+        "github": "https://github.com/medghilly/mawashi-app",
+        "demo": "",
+        "image": "/mawashi.png"
+      },
+      {
         "name": "Library Management System",
         "type": "Personal Project",
         "description": "Complete web application for library management with borrowing system, user management and book catalog. Responsive and intuitive interface.",
@@ -93,6 +103,16 @@
         "github": "https://github.com/medghilly/Gestion-Bibliotheque",
         "demo": "",
         "image": ""
+      },
+      {
+        "name": "ISCAE Annuaire",
+        "type": "Mobile App — Academic Project",
+        "description": "Mobile directory application for ISCAE built with .NET MAUI. Browse student and staff contacts with real-time data synchronization.",
+        "tech": [".NET MAUI", "C#", "Supabase"],
+        "highlights": ["Complete student & staff directory", "Native mobile interface", "Real-time data sync"],
+        "github": "https://github.com/medghilly/dotnet-project",
+        "demo": "",
+        "image": "/dotnet.jpeg"
       }
     ]
   },

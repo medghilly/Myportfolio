@@ -1,99 +1,87 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, ExternalLink, GithubIcon } from 'lucide-react';
+import { ArrowLeft, ExternalLink, GithubIcon } from 'lucide-react';
+import Navbar from '@/components/Navbar';
 
-const PREVIEW_COUNT = 3;
-
-const Projects = () => {
+const ProjectsPage = () => {
   const { t } = useLanguage();
-  const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const navigate = useNavigate();
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section
-      ref={ref as React.RefObject<HTMLElement>}
-      id="projects"
-      className={`section-spacing bg-secondary/30 transition-all duration-700 ease-out ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
-    >
-      <div className="section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+    <div className="min-h-screen bg-background">
+      <Navbar />
+
+      <main className="section-container pt-28 pb-20">
+        {/* Header */}
+        <div className="mb-10">
+          <button
+            onClick={() => navigate('/')}
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-6"
+          >
+            <ArrowLeft size={16} />
+            Retour
+          </button>
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
             {t.projects.title}
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            {t.projects.subtitle}
-          </p>
+          </h1>
+          <p className="text-muted-foreground text-lg">{t.projects.subtitle}</p>
         </div>
 
+        {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {t.projects.items.slice(0, PREVIEW_COUNT).map((project, index) => {
+          {t.projects.items.map((project, index) => {
             const isHovered = hoveredIndex === index;
             const isMobile = project.type.toLowerCase().includes('mobile');
-
             return (
               <div
                 key={index}
                 onClick={() => navigate(`/projects/${index}`)}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                style={{ transitionDelay: isVisible ? `${index * 120}ms` : '0ms' }}
-                className={`group relative cursor-pointer
-                  ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-                  transition-all duration-700 ease-out`}
+                className="group relative cursor-pointer transition-all duration-700 ease-out"
               >
-                {/* Glow effect behind card */}
+                {/* Glow */}
                 <div className={`absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary/60 via-primary/30 to-primary/60
                   blur-lg transition-opacity duration-500
                   ${isHovered ? 'opacity-70' : 'opacity-0'}`} />
 
-                {/* Card */}
                 <div className={`relative rounded-2xl overflow-hidden border transition-all duration-500
                   ${isHovered
                     ? 'border-primary/50 shadow-2xl shadow-primary/20 -translate-y-2 scale-[1.02]'
-                    : 'border-border shadow-md scale-100 translate-y-0'
-                  }`}>
+                    : 'border-border shadow-md'}`}>
 
-                  {/* Image container — fixed height, full display */}
-                  <div className="relative w-full overflow-hidden bg-card">
-
-                    {/* Code editor bar */}
-                    <div className="flex items-center bg-secondary border-b border-border overflow-hidden">
-                      {/* Tab */}
-                      <div className="flex items-center gap-2 px-4 py-2 bg-background border-r border-border shrink-0">
-                        <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
-                        <span className="text-xs font-mono truncate max-w-[130px]">
-                          <span className="text-yellow-500 dark:text-yellow-400">const</span>{' '}
-                          <span className="text-blue-600 dark:text-blue-400">{project.name.replace(/\s+/g, '')}</span>
-                          <span className="text-muted-foreground"> = </span>
-                          <span className="text-green-600 dark:text-green-400">{'{}'}</span>
-                        </span>
-                      </div>
-                      <div className="flex-1" />
-                      <span className="text-xs text-muted-foreground font-mono px-3 shrink-0">{isMobile ? 'APP' : 'TSX'}</span>
+                  {/* Code editor bar */}
+                  <div className="flex items-center bg-secondary border-b border-border overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-background border-r border-border shrink-0">
+                      <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
+                      <span className="text-xs font-mono truncate max-w-[130px]">
+                        <span className="text-yellow-500 dark:text-yellow-400">const</span>{' '}
+                        <span className="text-blue-600 dark:text-blue-400">{project.name.replace(/\s+/g, '')}</span>
+                        <span className="text-muted-foreground"> = </span>
+                        <span className="text-green-600 dark:text-green-400">{'{}'}</span>
+                      </span>
                     </div>
+                    <div className="flex-1" />
+                    <span className="text-xs text-muted-foreground font-mono px-3 shrink-0">{isMobile ? 'APP' : 'TSX'}</span>
+                  </div>
 
-                    <div className={`overflow-hidden flex items-center justify-center bg-gradient-to-b from-secondary/50 to-secondary/20 ${isMobile ? 'h-64' : 'h-48'}`}>
+                  {/* Image */}
+                  <div className={`overflow-hidden bg-card flex items-center justify-center bg-gradient-to-b from-secondary/50 to-secondary/20 ${isMobile ? 'h-64' : 'h-48'}`}>
                     {project.image ? (
                       isMobile ? (
                         /* Phone mockup */
                         <div className={`relative transition-transform duration-700 ease-out ${isHovered ? 'scale-105' : 'scale-100'}`}>
                           <div className="relative w-32 h-[230px] rounded-[24px] border-[4px] border-foreground/25 bg-black shadow-xl overflow-hidden">
-                            {/* notch */}
                             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-2.5 bg-black rounded-b-xl z-10" />
                             <img
                               src={project.image}
                               alt={project.name}
                               className="w-full h-full object-cover object-top"
                             />
-                            {/* home bar */}
                             <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-10 h-1 rounded-full bg-white/40" />
                           </div>
-                          {/* reflection */}
                           <div className="absolute inset-0 rounded-[22px] bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
                         </div>
                       ) : (
@@ -112,49 +100,42 @@ const Projects = () => {
                         </span>
                       </div>
                     )}
-                    </div>
 
-                    {/* Hover overlay with actions */}
-                    <div className={`absolute inset-0 bg-black/60 backdrop-blur-[2px]
+                    {/* Hover overlay */}
+                    <div className={`absolute inset-0 mt-9 bg-black/60 backdrop-blur-[2px]
                       flex flex-col items-center justify-center gap-3
-                      transition-all duration-400
+                      transition-opacity duration-400
                       ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-
                       <p className="text-white/90 text-sm text-center px-6 leading-relaxed line-clamp-3"
                         dangerouslySetInnerHTML={{ __html: project.description }} />
-
                       <div className="flex gap-3 mt-1">
-                        {project.github ? (
+                        {project.github && (
                           <a href={project.github} target="_blank" rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
                             className="flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-full
                               bg-white/15 text-white border border-white/30 backdrop-blur-sm
                               hover:bg-white/30 transition-all duration-200 active:scale-95">
-                            <GithubIcon size={13} />
-                            Code
+                            <GithubIcon size={13} /> Code
                           </a>
-                        ) : null}
-                        {project.demo ? (
+                        )}
+                        {project.demo && (
                           <a href={project.demo} target="_blank" rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
                             className="flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-full
-                              bg-primary text-white
-                              hover:bg-primary/80 transition-all duration-200 active:scale-95">
-                            <ExternalLink size={13} />
-                            Demo
+                              bg-primary text-white hover:bg-primary/80 transition-all duration-200 active:scale-95">
+                            <ExternalLink size={13} /> Demo
                           </a>
-                        ) : null}
-                        <button
-                          className="flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-full
-                            bg-white/15 text-white border border-white/30 backdrop-blur-sm
-                            hover:bg-white/30 transition-all duration-200 active:scale-95">
+                        )}
+                        <button className="flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-full
+                          bg-white/15 text-white border border-white/30 backdrop-blur-sm
+                          hover:bg-white/30 transition-all duration-200 active:scale-95">
                           Détails →
                         </button>
                       </div>
                     </div>
                   </div>
 
-                  {/* Bottom info bar */}
+                  {/* Bottom info */}
                   <div className={`px-4 py-3 transition-colors duration-300
                     ${isHovered ? 'bg-primary/5' : 'bg-card'}`}>
                     <div className="flex items-center justify-between gap-2 mb-1.5">
@@ -182,23 +163,9 @@ const Projects = () => {
             );
           })}
         </div>
-
-        {/* View all button */}
-        <div className="flex justify-center mt-12">
-          <button
-            onClick={() => navigate('/projects')}
-            className="group flex items-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-sm
-              bg-primary text-primary-foreground
-              hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-1
-              transition-all duration-300 active:scale-95"
-          >
-            {t.projects.show_more}
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200" />
-          </button>
-        </div>
-      </div>
-    </section>
+      </main>
+    </div>
   );
 };
 
-export default Projects;
+export default ProjectsPage;

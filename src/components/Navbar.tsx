@@ -10,9 +10,7 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -30,100 +28,101 @@ const Navbar = () => {
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
     const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass-effect shadow-lg' : 'bg-transparent'
-      }`}
-    >
-      <nav className="section-container py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a
-            href="#home"
-            className="text-xl font-bold hover:text-primary transition-colors flex items-center gap-1"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('#home');
-            }}
-          >
-            <span className="text-foreground">Mohamed</span>
-            <span className="gradient-text">Ghelli</span>
-          </a>
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-5 px-4">
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+      {/* ── Pill navbar ── */}
+      <nav className={`flex items-center gap-1 px-3 py-1.5 rounded-full
+        border border-border bg-background/95 backdrop-blur-xl
+        shadow-[0_4px_24px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)]
+        transition-all duration-300 ${scrolled ? 'shadow-xl' : ''}`}>
+
+        {/* Logo — visible on all screens */}
+        <a
+          href="#home"
+          onClick={(e) => { e.preventDefault(); handleNavClick('#home'); }}
+          className="flex items-center gap-1 px-3 py-1.5 rounded-full font-bold text-base
+            hover:bg-secondary transition-all duration-200 shrink-0"
+        >
+          <span className="text-foreground">Mohamed</span>
+          <span className="gradient-text">Ghelli</span>
+        </a>
+
+        {/* Divider */}
+        <div className="hidden md:block w-px h-5 bg-border mx-1 shrink-0" />
+
+        {/* Desktop links */}
+        <div className="hidden md:flex items-center gap-0.5">
+          {navLinks.map((link) => (
+            <a
+              key={link.key}
+              href={link.href}
+              onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
+              className="px-3 py-1.5 rounded-full text-sm text-muted-foreground
+                hover:text-foreground hover:bg-secondary transition-all duration-200"
+            >
+              {t.nav[link.key as keyof typeof t.nav]}
+            </a>
+          ))}
+        </div>
+
+        {/* Divider right */}
+        <div className="hidden md:block w-px h-5 bg-border mx-1 shrink-0" />
+
+        {/* Controls */}
+        <div className="flex items-center gap-0.5">
+          <button
+            onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
+            className="px-3 py-1.5 rounded-full text-sm font-medium text-muted-foreground
+              hover:text-foreground hover:bg-secondary transition-all duration-200"
+          >
+            {language.toUpperCase()}
+          </button>
+
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full text-muted-foreground
+              hover:text-foreground hover:bg-secondary transition-all duration-200"
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
+          </button>
+
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 rounded-full text-muted-foreground
+              hover:bg-secondary transition-all duration-200"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X size={16} /> : <Menu size={16} />}
+          </button>
+        </div>
+      </nav>
+
+      {/* ── Mobile dropdown ── */}
+      {mobileMenuOpen && (
+        <div className="md:hidden absolute top-[4.5rem] left-4 right-4
+          bg-background/98 backdrop-blur-xl border border-border rounded-2xl
+          shadow-2xl p-3 animate-fade-in">
+          <div className="flex flex-col gap-0.5">
             {navLinks.map((link) => (
               <a
                 key={link.key}
                 href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(link.href);
-                }}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full"
+                onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
+                className="px-4 py-2.5 rounded-xl text-sm text-muted-foreground
+                  hover:text-foreground hover:bg-secondary transition-all duration-200"
               >
                 {t.nav[link.key as keyof typeof t.nav]}
               </a>
             ))}
           </div>
-
-          {/* Controls */}
-          <div className="flex items-center gap-2">
-            {/* Language Toggle */}
-            <button
-              onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
-              className="px-3 py-1.5 text-sm font-medium rounded-lg bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-            >
-              {language.toUpperCase()}
-            </button>
-
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-              aria-label="Toggle theme"
-            >
-              {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
-            </button>
-
-            {/* Mobile Menu Toggle */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg bg-secondary text-secondary-foreground"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
-            </button>
-          </div>
         </div>
-
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in">
-            <div className="flex flex-col gap-3">
-              {navLinks.map((link) => (
-                <a
-                  key={link.key}
-                  href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(link.href);
-                  }}
-                  className="text-muted-foreground hover:text-foreground transition-colors py-2"
-                >
-                  {t.nav[link.key as keyof typeof t.nav]}
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
-      </nav>
+      )}
     </header>
   );
 };
