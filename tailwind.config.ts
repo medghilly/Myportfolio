@@ -93,5 +93,18 @@ export default {
       },
     },
   },
+  /* safelist forces Tailwind to generate non-standard opacity variants like
+     bg-primary/8, bg-primary/12, bg-primary/15 used throughout the design */
+  safelist: [
+    { pattern: /^bg-primary\/(3|4|6|8|10|12|15|20|25|30|40|50|60|70|80)$/ },
+    { pattern: /^border-primary\/(8|10|12|15|20|25|30|40|50)$/ },
+    { pattern: /^text-primary\/(50|60|70|80)$/ },
+    { pattern: /^shadow-primary\/(10|15|20|25|30)$/ },
+    { pattern: /^hover:bg-primary\/(8|10|12|15|20|25|30|80|90)$/ },
+    { pattern: /^bg-blue-500\/(10|15|20)$/ },
+    { pattern: /^border-blue-500\/(20|30)$/ },
+    { pattern: /^bg-cyan-500\/(10|15|20)$/ },
+    { pattern: /^border-cyan-500\/(20|30)$/ },
+  ],
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;

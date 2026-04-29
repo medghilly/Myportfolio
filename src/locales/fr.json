@@ -4,7 +4,6 @@
     "about": "À propos",
     "skills": "Compétences",
     "projects": "Projets",
-    "services": "Services",
     "timeline": "Parcours",
     "contact": "Contact"
   },
@@ -12,7 +11,11 @@
     "greeting": "Bonjour, je suis",
     "name": "Mohamed Ghelli",
     "title": "Étudiant en Réseaux & Développeur Full Stack",
-    "subtitle": "Étudiant en 3ème année Licence Réseaux Informatiques & Télécommunications, passionné par le développement web full stack.",
+    "tagline": "Passionné par la création de solutions sécurisées & évolutives",
+    "subtitle": "Étudiant en 3ème année de Licence en Réseaux & Télécommunications, spécialisé en développement web moderne.",
+    "badge_experience": "2+ ans de projets",
+    "badge_stack": "React · Node · TypeScript",
+    "badge_lang": "Français · Arabe · Anglais",
     "cta_projects": "Voir mes projets",
     "cta_cv": "Télécharger mon CV",
     "available": "Disponible pour mission",
@@ -22,17 +25,36 @@
     "back_to_top": "Retour en haut"
   },
   "about": {
-    "title": "À propos",
-    "subtitle": "Découvrez mon parcours",
-    "content": "Étudiant spécialisé en réseaux informatiques et télécommunications, je suis également Full Stack Developer. Ma formation me permet de maîtriser à la fois la conception et la sécurisation d'infrastructures réseau complexes, ainsi que le développement d'applications web modernes et performantes. Je combine ces deux expertises pour créer des solutions complètes, alliant robustesse réseau et excellence en développement."
+    "title": "À propos de moi",
+    "subtitle": "Façonner l'avenir à travers les réseaux et le code",
+    "content": "Je suis un Ingénieur Réseaux & Développeur Full Stack dévoué, passionné par la création de solutions numériques sécurisées, évolutives et performantes. Mon parcours unique en Télécommunications, combiné au développement web moderne, me permet de combler le fossé entre les infrastructures complexes et les expériences utilisateur intuitives.",
+    "roles": {
+      "fullstack": "Développeur Full-Stack",
+      "network": "Ingénieur Réseaux",
+      "mobile": "Développeur Mobile/Web"
+    },
+    "description_roles": "Maîtriser la synergie entre architecture réseau robuste et développement d'applications modernes."
   },
   "skills": {
     "title": "Compétences",
     "subtitle": "Technologies et outils que je maîtrise",
     "categories": {
-      "web": "Développement Web",
-      "network": "Réseaux & Sécurité",
-      "devops": "DevOps & Outils"
+      "frontend": {
+        "title": "Frontend Development",
+        "items": ["React & Next.js", "TypeScript", "Tailwind CSS", "Redux / Zustand"]
+      },
+      "backend": {
+        "title": "Backend Development",
+        "items": ["Node.js & Express", "Laravel (PHP)", "PostgreSQL / MySQL", "Supabase / Firebase"]
+      },
+      "mobile": {
+        "title": "Mobile Development",
+        "items": ["Flutter & Dart", ".NET MAUI", "React Native", "Native Android (Java)"]
+      },
+      "tools": {
+        "title": "Tools & DevOps",
+        "items": ["Git & GitHub", "Docker", "Postman / Insomnia", "Linux / Bash"]
+      }
     }
   },
   "projects": {
@@ -116,55 +138,43 @@
       }
     ]
   },
-  "services": {
-    "title": "Services",
-    "subtitle": "Ce que je peux vous apporter",
-    "items": [
-      {
-        "title": "Développement Web",
-        "description": "Création de sites et applications web modernes, responsive et performants avec les dernières technologies."
-      },
-      {
-        "title": "Architecture Réseaux",
-        "description": "Conception et déploiement d'infrastructures réseau sécurisées, évolutives et haute disponibilité."
-      },
-      {
-        "title": "Automatisation",
-        "description": "Scripts et outils pour automatiser vos tâches répétitives et optimiser vos processus."
-      },
-      {
-        "title": "Conseil & Formation",
-        "description": "Accompagnement technique et formations sur mesure pour vos équipes."
-      }
-    ]
-  },
   "timeline": {
-    "title": "Parcours",
+    "title": "Expérience & Éducation",
     "subtitle": "Mon évolution professionnelle et académique",
-    "items": [
+    "experience": [
       {
-        "year": "2026",
-        "title": "Licence en Réseaux Informatiques et Télécommunications",
-        "location": "ISCAE, Nouakchott",
-        "description": "Formation spécialisée en réseaux informatiques, télécommunications et développement web full stack."
-      },
-      {
-        "year": "2025",
-        "title": "Stage - Chinguitel",
+        "year": "2025 (Juil - Sept)",
+        "title": "Stagiaire Réseaux & Télécoms",
+        "company": "Chinguitel",
         "location": "Nouakchott, Mauritanie",
-        "description": "Stage d'été (Juillet - Septembre 2025) en administration réseau et télécommunications."
-      },
+        "description": "Stage pratique au sein de la direction technique, département réseaux et télécommunications.",
+        "responsibilities": [
+          "Surveillance de la stabilité des infrastructures réseaux",
+          "Participation à la maintenance des systèmes de télécommunication",
+          "Aide au dépannage des problèmes de connectivité"
+        ],
+        "tech": ["Cisco", "Routing", "VLAN", "Systèmes Télécoms"]
+      }
+    ],
+    "education": [
       {
-        "year": "2023",
-        "title": "Début Licence ISCAE",
-        "location": "ISCAE, Nouakchott",
-        "description": "Entrée à l'ISCAE en Octobre 2023 pour une formation en réseaux informatiques et télécommunications."
+        "year": "2023 — 2026",
+        "title": "Licence en Réseaux Informatiques & Télécoms",
+        "school": "ISCAE",
+        "location": "Nouakchott, Mauritanie",
+        "description": "Formation spécialisée en réseaux informatiques, télécommunications et développement web full stack.",
+        "highlights": [
+          "Focus sur la sécurité et les infrastructures réseaux",
+          "Programmation avancée et technologies web modernes",
+          "Projets académiques de gestion en temps réel"
+        ]
       },
       {
         "year": "2023",
         "title": "Baccalauréat C (Mathématiques)",
-        "location": "Lycée Excellence 1, Nouakchott",
-        "description": "Obtention du baccalauréat série C avec spécialité mathématiques et sciences."
+        "school": "Lycée d'Excellence 1",
+        "location": "Nouakchott, Mauritanie",
+        "description": "Obtention du baccalauréat série C avec mention, spécialité mathématiques et sciences physiques."
       }
     ]
   },

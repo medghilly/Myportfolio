@@ -65,7 +65,7 @@ const ProjectDetail = () => {
                       <img
                         src={project.image}
                         alt={project.name}
-                        className="w-full h-full object-cover object-top"
+                        className="w-full h-full object-contain object-top bg-black"
                       />
                       {/* home indicator */}
                       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-20 h-1.5 rounded-full bg-white/40" />
@@ -94,7 +94,8 @@ const ProjectDetail = () => {
 
           {/* Badge + Title */}
           <div className="mb-4">
-            <span className="text-xs font-medium px-3 py-1 rounded-full bg-primary/10 text-primary inline-block mb-3">
+            <span className="text-xs font-semibold px-3 py-1 rounded-full
+              bg-primary/10 text-primary border border-primary/20 inline-block mb-3">
               {project.type}
             </span>
             <h1 className="text-2xl md:text-3xl font-bold text-foreground">
@@ -110,7 +111,7 @@ const ProjectDetail = () => {
 
           {/* Highlights */}
           <div className="mb-6">
-            <h2 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3">
+            <h2 className="text-sm font-bold text-foreground uppercase tracking-wider mb-3">
               Points clés
             </h2>
             <ul className="space-y-2">
@@ -125,14 +126,15 @@ const ProjectDetail = () => {
 
           {/* Tech stack */}
           <div className="mb-8">
-            <h2 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3">
+            <h2 className="text-sm font-bold text-foreground uppercase tracking-wider mb-3">
               Technologies
             </h2>
             <div className="flex flex-wrap gap-2">
               {project.tech.map((tech) => (
                 <span key={tech}
-                  className="text-sm px-3 py-1 rounded-lg bg-secondary text-secondary-foreground
-                    font-mono border border-border">
+                  className="text-sm px-3 py-1 rounded-full
+                    bg-primary/10 text-primary border border-primary/20
+                    font-mono font-medium">
                   {tech}
                 </span>
               ))}
@@ -140,35 +142,29 @@ const ProjectDetail = () => {
           </div>
 
           {/* Action buttons */}
-          <div className="flex gap-3 pt-6 border-t border-border">
+          <div className="flex gap-3 pt-6 border-t border-primary/[15%]">
             {project.github ? (
               <a href={project.github} target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium
-                  bg-secondary text-secondary-foreground border border-border
-                  hover:bg-primary hover:text-primary-foreground hover:border-primary
-                  transition-all duration-200 active:scale-95">
+                className="btn-secondary flex items-center gap-2">
                 <GithubIcon size={16} />
                 {t.projects.view_code}
               </a>
             ) : (
               <span className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium
-                bg-secondary/50 text-muted-foreground border border-dashed border-border cursor-not-allowed">
+                bg-secondary/50 text-muted-foreground border border-dashed border-primary/20 cursor-not-allowed">
                 <GithubIcon size={16} />
                 {t.projects.coming_soon}
               </span>
             )}
             {project.demo ? (
               <a href={project.demo} target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium
-                  bg-primary text-primary-foreground
-                  hover:bg-primary/80 hover:shadow-lg hover:shadow-primary/25
-                  transition-all duration-200 active:scale-95">
+                className="btn-primary">
                 <ExternalLink size={16} />
                 {t.projects.view_demo}
               </a>
             ) : (
               <span className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium
-                bg-primary/10 text-primary/50 border border-dashed border-primary/30 cursor-not-allowed">
+                bg-primary/[8%] text-primary/50 border border-dashed border-primary/25 cursor-not-allowed">
                 <ExternalLink size={16} />
                 {t.projects.coming_soon}
               </span>

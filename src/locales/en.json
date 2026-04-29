@@ -4,7 +4,6 @@
     "about": "About",
     "skills": "Skills",
     "projects": "Projects",
-    "services": "Services",
     "timeline": "Timeline",
     "contact": "Contact"
   },
@@ -12,7 +11,8 @@
     "greeting": "Hi, I'm",
     "name": "Mohamed Ghelli",
     "title": "Networks Student & Full Stack Developer",
-    "subtitle": "3rd year Bachelor's student in Computer Networks & Telecommunications, passionate about full stack web development.",
+    "tagline": "Passionate about building secure & scalable solutions",
+    "subtitle": "3rd year Bachelor's student in Computer Networks & Telecommunications, specialized in modern web development.",
     "cta_projects": "View my projects",
     "cta_cv": "Download my CV",
     "available": "Available for work",
@@ -22,17 +22,36 @@
     "back_to_top": "Back to top"
   },
   "about": {
-    "title": "About",
-    "subtitle": "Get to know me",
-    "content": "Student specialized in Computer Networks and Telecommunications, I am also a Full Stack Developer. My training allows me to master both the design and security of complex network infrastructures, as well as the development of modern and high-performance web applications. I combine these two areas of expertise to create complete solutions, blending network robustness with development excellence."
+    "title": "About me",
+    "subtitle": "Engineering the future through networks and code",
+    "content": "I am a dedicated Network Engineer & Full Stack Developer with a passion for building secure, scalable, and high-performance digital solutions. My unique background in Telecommunications combined with modern web development allows me to bridge the gap between complex infrastructure and intuitive user experiences.",
+    "roles": {
+      "fullstack": "Full-Stack Developer",
+      "network": "Network Engineer",
+      "mobile": "Mobile/Web Developer"
+    },
+    "description_roles": "Mastering the synergy between robust network architecture and modern application development."
   },
   "skills": {
     "title": "Skills",
     "subtitle": "Technologies and tools I master",
     "categories": {
-      "web": "Web Development",
-      "network": "Networking & Security",
-      "devops": "DevOps & Tools"
+      "frontend": {
+        "title": "Frontend Development",
+        "items": ["React & Next.js", "TypeScript", "Tailwind CSS", "Redux / Zustand"]
+      },
+      "backend": {
+        "title": "Backend Development",
+        "items": ["Node.js & Express", "Laravel (PHP)", "PostgreSQL / MySQL", "Supabase / Firebase"]
+      },
+      "mobile": {
+        "title": "Mobile Development",
+        "items": ["Flutter & Dart", ".NET MAUI", "React Native", "Native Android (Java)"]
+      },
+      "tools": {
+        "title": "Tools & DevOps",
+        "items": ["Git & GitHub", "Docker", "Postman / Insomnia", "Linux / Bash"]
+      }
     }
   },
   "projects": {
@@ -116,55 +135,43 @@
       }
     ]
   },
-  "services": {
-    "title": "Services",
-    "subtitle": "What I can offer",
-    "items": [
-      {
-        "title": "Web Development",
-        "description": "Creation of modern, responsive and high-performance websites and web applications using the latest technologies."
-      },
-      {
-        "title": "Network Architecture",
-        "description": "Design and deployment of secure, scalable and highly available network infrastructures."
-      },
-      {
-        "title": "Automation",
-        "description": "Scripts and tools to automate your repetitive tasks and optimize your processes."
-      },
-      {
-        "title": "Consulting & Training",
-        "description": "Technical support and customized training for your teams."
-      }
-    ]
-  },
   "timeline": {
-    "title": "Timeline",
+    "title": "Experience & Education",
     "subtitle": "My professional and academic journey",
-    "items": [
+    "experience": [
       {
-        "year": "2026",
-        "title": "Bachelor's Degree in Computer Networks and Telecommunications",
-        "location": "ISCAE, Nouakchott",
-        "description": "Specialized training in computer networks, telecommunications and full stack web development."
-      },
-      {
-        "year": "2025",
-        "title": "Internship - Chinguitel",
+        "year": "2025 (July - Sept)",
+        "title": "Network & Telecom Intern",
+        "company": "Chinguitel",
         "location": "Nouakchott, Mauritania",
-        "description": "Summer internship (July - September 2025) in network administration and telecommunications."
-      },
+        "description": "Internship in the network administration and telecommunications department.",
+        "responsibilities": [
+          "Monitored network infrastructure stability",
+          "Participated in telecommunications system maintenance",
+          "Assisted in troubleshooting connectivity issues"
+        ],
+        "tech": ["Cisco", "Routing", "VLAN", "Telco Systems"]
+      }
+    ],
+    "education": [
       {
-        "year": "2023",
-        "title": "Started Bachelor's at ISCAE",
-        "location": "ISCAE, Nouakchott",
-        "description": "Entered ISCAE in October 2023 for training in computer networks and telecommunications."
+        "year": "2023 — 2026",
+        "title": "Bachelor's Degree in Computer Networks & Telecom",
+        "school": "ISCAE",
+        "location": "Nouakchott, Mauritania",
+        "description": "Specialized training in computer networks, telecommunications and full stack web development.",
+        "highlights": [
+          "Focus on network security and infrastructure",
+          "Advanced programming and web technologies",
+          "Academic projects in real-time management"
+        ]
       },
       {
         "year": "2023",
         "title": "Baccalaureate C (Mathematics)",
-        "location": "Excellence 1 High School, Nouakchott",
-        "description": "Obtained baccalaureate series C with specialization in mathematics and sciences."
+        "school": "Excellence 1 High School",
+        "location": "Nouakchott, Mauritania",
+        "description": "Obtained baccalaureate series C with honors, specializing in mathematics and physical sciences."
       }
     ]
   },
