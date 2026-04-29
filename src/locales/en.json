@@ -140,6 +140,19 @@
     "subtitle": "My professional and academic journey",
     "experience": [
       {
+        "year": "2026 (Feb - Present)",
+        "title": "PFE Intern - Full Stack Developer",
+        "company": "A2holding.mr",
+        "location": "Nouakchott, Mauritania",
+        "description": "Graduation internship focused on developing innovative digital solutions.",
+        "responsibilities": [
+          "Developing high-performance web and mobile interfaces",
+          "Implementing scalable backend architectures",
+          "Collaborating within a dynamic technical team"
+        ],
+        "tech": ["React", "Node.js", "Tailwind CSS", "Agile"]
+      },
+      {
         "year": "2025 (July - Sept)",
         "title": "Network & Telecom Intern",
         "company": "Chinguitel",

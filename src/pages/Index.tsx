@@ -8,10 +8,12 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import ScrollUI from '@/components/ScrollUI';
 import SocialSidebar from "@/components/SocialSidebar";
+import Preloader from "@/components/Preloader";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Preloader />
       <Navbar />
       <ScrollUI />
       <SocialSidebar />

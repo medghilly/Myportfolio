@@ -143,6 +143,19 @@
     "subtitle": "Mon évolution professionnelle et académique",
     "experience": [
       {
+        "year": "2026 (Fév - Présent)",
+        "title": "Stagiaire PFE - Développeur Full Stack",
+        "company": "A2holding.mr",
+        "location": "Nouakchott, Mauritanie",
+        "description": "Stage de fin d'études axé sur le développement de solutions numériques innovantes.",
+        "responsibilities": [
+          "Développement d'interfaces web et mobiles performantes",
+          "Mise en œuvre d'architectures backend évolutives",
+          "Collaboration au sein d'une équipe technique dynamique"
+        ],
+        "tech": ["React", "Node.js", "Tailwind CSS", "Agile"]
+      },
+      {
         "year": "2025 (Juil - Sept)",
         "title": "Stagiaire Réseaux & Télécoms",
         "company": "Chinguitel",
