@@ -189,10 +189,14 @@ const Hero = () => {
                   <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-foreground text-background text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Email</span>
                </a>
                <div className="w-12 h-px bg-border/50 mx-2" />
-               <button className="flex items-center gap-2 text-sm font-bold text-muted-foreground hover:text-primary transition-colors group">
+               <a 
+                 href="/CV.pdf" 
+                 download 
+                 className="flex items-center gap-2 text-sm font-bold text-muted-foreground hover:text-primary transition-colors group"
+               >
                   <Download size={18} className="group-hover:-translate-y-0.5 transition-transform" />
-                  CV.PDF
-               </button>
+                  {t.hero.cta_cv}
+               </a>
             </motion.div>
           </motion.div>
 
