@@ -11,7 +11,27 @@ import { useMagnetic } from '@/hooks/useMagnetic';
 const Hero = () => {
   const { t } = useLanguage();
   const [titleIdx, setTitleIdx] = React.useState(0);
+  const [cvMenuOpen, setCvMenuOpen] = React.useState(false);
+  const cvMenuRef = React.useRef<HTMLDivElement | null>(null);
   const titles = [t.hero.title, "Full Stack Developer", "Networks & Systems Student"];
+
+  React.useEffect(() => {
+    if (!cvMenuOpen) return;
+    const onClick = (e: MouseEvent) => {
+      if (cvMenuRef.current && !cvMenuRef.current.contains(e.target as Node)) {
+        setCvMenuOpen(false);
+      }
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setCvMenuOpen(false);
+    };
+    document.addEventListener('mousedown', onClick);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onClick);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [cvMenuOpen]);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -189,14 +209,57 @@ const Hero = () => {
                   <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-foreground text-background text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Email</span>
                </a>
                <div className="w-12 h-px bg-border/50 mx-2" />
-               <a 
-                 href="/CV.pdf" 
-                 download 
-                 className="flex items-center gap-2 text-sm font-bold text-muted-foreground hover:text-primary transition-colors group"
-               >
-                  <Download size={18} className="group-hover:-translate-y-0.5 transition-transform" />
-                  {t.hero.cta_cv}
-               </a>
+               <div className="relative" ref={cvMenuRef}>
+                 <button
+                   type="button"
+                   onClick={() => setCvMenuOpen((v) => !v)}
+                   aria-haspopup="menu"
+                   aria-expanded={cvMenuOpen}
+                   className="flex items-center gap-2 text-sm font-bold text-muted-foreground hover:text-primary transition-colors group"
+                 >
+                   <Download size={18} className="group-hover:-translate-y-0.5 transition-transform" />
+                   {t.hero.cta_cv}
+                 </button>
+
+                 <AnimatePresence>
+                   {cvMenuOpen && (
+                     <motion.div
+                       initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                       animate={{ opacity: 1, y: 0, scale: 1 }}
+                       exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                       transition={{ duration: 0.18, ease: "easeOut" }}
+                       role="menu"
+                       className="absolute left-0 bottom-full mb-3 z-30 min-w-[220px] p-2 rounded-2xl border border-border bg-white dark:bg-slate-900 shadow-2xl shadow-primary/10"
+                     >
+                       <p className="px-3 py-2 text-[10px] font-black uppercase tracking-wider text-muted-foreground">
+                         {t.hero.cv_choose}
+                       </p>
+                       <a
+                         href="/CV.pdf"
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         onClick={() => setCvMenuOpen(false)}
+                         role="menuitem"
+                         className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+                       >
+                         <span className="text-lg leading-none" aria-hidden>🇫🇷</span>
+                         {t.hero.cv_french}
+                       </a>
+                       <a
+                         href="/CV_en.pdf"
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         onClick={() => setCvMenuOpen(false)}
+                         role="menuitem"
+                         className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+                       >
+                         <span className="text-lg leading-none" aria-hidden>🇬🇧</span>
+                         {t.hero.cv_english}
+                       </a>
+                     </motion.div>
+                   )}
+                 </AnimatePresence>
+               </div>
             </motion.div>
           </motion.div>
 
