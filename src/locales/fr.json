@@ -106,7 +106,7 @@
         "tech": ["Laravel", "MySQL", "Bootstrap", "Tailwind CSS", "JavaScript"],
         "highlights": ["Système de réservation en temps réel", "Gestion multi-utilisateurs", "Interface moderne et responsive"],
         "github": "https://github.com/medghilly/krilywete",
-        "demo": "",
+        "demo": "https://krilywete.onrender.com/",
         "image": "/krilywte.png"
       },
       {
