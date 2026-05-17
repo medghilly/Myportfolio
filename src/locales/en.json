@@ -73,7 +73,7 @@
         "tech": ["TypeScript", "React", "Express", "Node.js"],
         "highlights": ["Real-time attendance tracking", "Student and teacher interface", "Automatic notifications"],
         "github": "https://github.com/medghilly/iscae-connect",
-        "demo": "",
+        "demo": "https://iscae-connect.vercel.app/",
         "image": "/iscae-connect.png"
       },
       {
